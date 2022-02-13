@@ -129,6 +129,7 @@ export const Searchbar = styled.div`
 
   @media screen and (max-width: 995px) {
     transition: all 0.5s ease-in-out;
+    margin: 9px 7px 9px 0px;
 
     width: 95%;
   }

@@ -1,10 +1,10 @@
 export const colors={
     font: '#05053A',
     body: '#707092',
-    prim: '#662D90',
-    sec:'#2E2E8D',
+    prim: '#8238B8',
+    sec:'#3D3DCB',
     ter:'#FF64A2',
-    smooth_prim:'#DFDBF6',
+    smooth_prim:'#EADBF6',
     smooth_sec:'#CEDAFB',
     smooth_ter:'#FFE2F7',
     searchbar:'#E6E6E6',
