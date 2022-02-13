@@ -1,136 +1,144 @@
-import { FaBars } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { colors } from '../../theme';
 
 export const Nav = styled.nav`
-  background: white;
-  height: 80px;
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1000px) / 2);
+  height: 80px;
+  padding: 0.5rem 10px;
   z-index: 10;
-  box-shadow: 0 1px 3px hsla(0,0%,0%,.2)
-  /* box-shadow: inset 0 1px 0 hsl(224,84%,74%);*/
-  /* Third Nav */
-  /* justify-content: flex-start; */
+
+  background: white;
+  box-shadow: 0 1px 3px ${colors.shadow};
+
+  @media screen and (min-width: 996px) {
+    justify-content: space-between;
+    padding: 0.5rem calc((100vw - 1000px) / 2);
+  }
+
 `;
 
 export const NavLink = styled(Link)`
-  color: #2E2E8D;
   display: flex;
+  height: 100%;
+  padding: 0 1rem;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
   cursor: pointer;
+  
+  color: ${colors.sec};
+
   &.active {
     color: #15cdfc;
   }
 `;
 
-export const Bars = styled(FaBars)`
-  display: none;
-  color: #fff;
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-`;
-
-export const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: -24px;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
-  @media screen and (max-width: 768px) {
+export const LogoL = styled.img`
+  @media screen and (max-width: 995px) {
     display: none;
   }
 `;
 
+export const LogoS = styled(LogoL)`
+    display: flex;
+    padding: 0px 10px 0px 0px;
+    @media screen and (min-width: 996px) {
+    display: none;
+  }
+
+`;
+
 export const NavBtn = styled.nav`
   display: flex;
-  align-items: center;
   margin-right: 24px;
-  /* Third Nav */
-  /* justify-content: flex-end;
-  width: 100vw; */
-  @media screen and (max-width: 768px) {
+  align-items: center;
+
+  @media screen and (max-width: 995px) {
     display: none;
   }
 `;
 
 export const NavBtnLinkSecondary = styled(Link)`
-  border-radius: 5px;
-  background: white;
   padding: 10px 15px;
-  color: #2E2E8D;
-  outline: solid;
-  outline-color: #2E2E8D;
-
-  
-  border: none;
+  margin-left: 24px;
   cursor: pointer;
 
-  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 0px 0px 0px 3px ${colors.sec};
+  color: ${colors.sec};
+  background: white;
   text-decoration: none;
-  /* Second Nav */
-  margin-left: 24px;
+
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+    box-shadow: none;
+    background: ${colors.smooth_sec};
+    color: ${colors.sec};
   }
 `;
 
 export const NavBtnLink = styled(Link)`
-  border-radius: 5px;
-  
-  background: #662D90;
+  margin-left: 24px;
   padding: 10px 15px;
-  color: #fff;
   outline: none;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+
+  font-weight: 400;
+
+  color: #fff;
+  background: ${colors.prim};
   text-decoration: none;
-  /* Second Nav */
-  margin-left: 24px;
+  border-radius: 5px;
+
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+    font-weight: 400;
+    background: ${colors.smooth_prim};
+    color: ${colors.prim};
   }
 `;
 
 export const Input = styled.input`
-margin: 0 0.5rem 0 0.5rem;
-width: 100%;
-border: none;
-outline: none;
-background:#E6E6E6;
-color: black;
-  }
+  width: 100%;
+  margin: 0 0.5rem 0 0.5rem;
+  font-size: medium;
+
+  border: none;
+  outline: none;
+  background:${colors.searchbar};
+  color: black;
 `;
 
 export const Searchbar = styled.div`
-  align-items: center;
+  display: flex;
   width: 40%;
   margin: 9px 0px 9px 0px;
-  display: flex;
-  background: #E6E6E6;
-  border-radius: 0.5rem;
+  align-items: center;
+
+
   color: white;
-  display: flex;
+  background: ${colors.searchbar};
+  border-radius: 0.5rem;
+
+  @media screen and (max-width: 995px) {
+    transition: all 0.5s ease-in-out;
+
+    width: 95%;
+  }
 `;
-/*box-shadow: 0.25rem 0.25rem 0rem #999999;*/
+
+export const NavMenu = styled.div`
+  display: flex;
+  margin-right: -24px;
+  align-items: center;
+
+  @media screen and (max-width: 995px) {
+    display: none;
+  }
+`;
