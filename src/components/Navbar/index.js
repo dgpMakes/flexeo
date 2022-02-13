@@ -4,6 +4,7 @@ import Logo_long from '../../images/logo-long.svg';
 import Logo_short from '../../images/logo-short.svg';
 import { IoLogoGoogle, IoMdAddCircleOutline } from 'react-icons/io';
 import { FaSearch } from 'react-icons/fa';
+import { colors } from '../../theme';
 
 const Navbar = () => {
   return (
@@ -20,7 +21,7 @@ const Navbar = () => {
           </NavLink>
         </NavMenu> */}
         <Searchbar>
-          <FaSearch size={20} style={{color: "#999999", margin: "0px 0px 0px 15px", verticalAlign: 'middle' }} /><Input type="text" placeholder="Buscar zapatillas" />
+          <FaSearch size={20} style={{color: colors.i_searchbar, margin: "0px 0px 0px 15px", verticalAlign: 'middle' }} /><Input type="text" placeholder="Buscar zapatillas" />
         </Searchbar>
         <NavBtn>
           <NavBtnLinkSecondary to="/sign-in"><IoLogoGoogle size={20} style={{ margin: "0px 3px 0px 0px", verticalAlign: 'middle' }} />Entrar con Google</NavBtnLinkSecondary>

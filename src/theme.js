@@ -8,7 +8,9 @@ export const colors={
     smooth_sec:'#CEDAFB',
     smooth_ter:'#FFE2F7',
     searchbar:'#E6E6E6',
-    shadow:'hsla(0,0%,0%,.2)'
+    i_searchbar:'#999999',
+    shadow:'hsla(0,0%,0%,.2)',
+    white:'#fff'
 
 }
 

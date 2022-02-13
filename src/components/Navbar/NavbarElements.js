@@ -58,28 +58,6 @@ export const NavBtn = styled.nav`
   }
 `;
 
-export const NavBtnLinkSecondary = styled(Link)`
-  padding: 10px 15px;
-  margin-left: 24px;
-  cursor: pointer;
-
-  border-radius: 5px;
-  border: none;
-  box-shadow: inset 0px 0px 0px 3px ${colors.sec};
-  color: ${colors.sec};
-  background: white;
-  text-decoration: none;
-
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    box-shadow: none;
-    background: ${colors.smooth_sec};
-    color: ${colors.sec};
-  }
-`;
-
 export const NavBtnLink = styled(Link)`
   margin-left: 24px;
   padding: 10px 15px;
@@ -99,10 +77,33 @@ export const NavBtnLink = styled(Link)`
   &:hover {
     transition: all 0.2s ease-in-out;
     font-weight: 400;
-    background: ${colors.smooth_prim};
-    color: ${colors.prim};
+    background: ${colors.font};
+    color: ${colors.white};
   }
 `;
+
+export const NavBtnLinkSecondary = styled(Link)`
+  padding: 10px 15px;
+  margin-left: 24px;
+  cursor: pointer;
+
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 0px 0px 0px 3px ${colors.sec};
+  color: ${colors.sec};
+  background: white;
+  text-decoration: none;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    box-shadow: none;
+    background: ${colors.font};
+    color: ${colors.white};
+  }
+`;
+
 
 export const Input = styled.input`
   width: 100%;
