@@ -25,9 +25,9 @@ const Navbar = () => {
       <Tagbar>
           <Tag>Nike</Tag>
           <Tag>Adidas</Tag>
-          <Tag>New Balance</Tag>
           <Tag>FILA</Tag>
           <Tag>Reebok</Tag>
+          <Tag>Puma</Tag>
         </Tagbar>
       
 

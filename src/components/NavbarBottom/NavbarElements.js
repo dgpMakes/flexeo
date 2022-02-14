@@ -11,7 +11,7 @@ export const Nav = styled.nav`
 
   background: white;
   box-shadow: 0 1px 3px ${colors.shadow};
-  justify-content: center;
+  justify-content: space-around;
   @media screen and (min-width: 996px) {
     display: none;
   }
@@ -34,13 +34,13 @@ export const NavLink = styled(Link)`
 
 export const NavBtn = styled.nav`
   display: flex;
-  margin-right: 24px;
+  margin-right: 0px;
   align-items: center;
 `;
 
 export const NavBtnLink = styled(Link)`
-  margin-left: 24px;
   padding: 10px 15px;
+  margin-left: 7px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -60,11 +60,15 @@ export const NavBtnLink = styled(Link)`
     background: ${colors.font};
     color: ${colors.white};
   }
+
+  @media screen and (max-width: 380px) {
+    padding: 7px 7px;
+    font-size: small;
+  }
 `;
 
 export const NavBtnLinkSecondary = styled(Link)`
   padding: 10px 15px;
-  margin-left: 24px;
   cursor: pointer;
 
   border-radius: 5px;
@@ -81,6 +85,11 @@ export const NavBtnLinkSecondary = styled(Link)`
     box-shadow: none;
     background: ${colors.font};
     color: ${colors.white};
+  }
+
+  @media screen and (max-width: 380px) {
+    padding: 7px 7px;
+    font-size: small;
   }
 `;
 
