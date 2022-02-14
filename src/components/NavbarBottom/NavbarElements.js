@@ -3,20 +3,18 @@ import styled from 'styled-components';
 import { colors } from '../../theme';
 
 export const Nav = styled.nav`
+  align-items: center;
   display: flex;
   height: 80px;
-  padding: 0.5rem 10px;
   z-index: 10;
+  position: sticky; bottom: 0;
 
   background: white;
   box-shadow: 0 1px 3px ${colors.shadow};
-  position: sticky; top: 0; //Makes things sticky <3
-  
+  justify-content: center;
   @media screen and (min-width: 996px) {
-    justify-content: space-between;
-    padding: 0.5rem calc((100vw - 1000px) / 2);
+    display: none;
   }
-
 `;
 
 export const NavLink = styled(Link)`
@@ -34,29 +32,10 @@ export const NavLink = styled(Link)`
   }
 `;
 
-export const LogoL = styled.img`
-  @media screen and (max-width: 995px) {
-    display: none;
-  }
-`;
-
-export const LogoS = styled(LogoL)`
-    display: flex;
-    padding: 0px 10px 0px 0px;
-    @media screen and (min-width: 996px) {
-    display: none;
-  }
-
-`;
-
 export const NavBtn = styled.nav`
   display: flex;
   margin-right: 24px;
   align-items: center;
-
-  @media screen and (max-width: 995px) {
-    display: none;
-  }
 `;
 
 export const NavBtnLink = styled(Link)`
@@ -106,37 +85,7 @@ export const NavBtnLinkSecondary = styled(Link)`
 `;
 
 
-export const Input = styled.input`
-  width: 100%;
-  margin: 0 0.5rem 0 0.5rem;
-  font-size: medium;
-
-  border: none;
-  outline: none;
-  background:${colors.searchbar};
-  color: black;
-`;
-
-export const Searchbar = styled.div`
-  display: flex;
-  width: 38%;
-  margin: 9px 0px 9px 0px;
-  align-items: center;
-
-
-  color: white;
-  background: ${colors.searchbar};
-  border-radius: 0.5rem;
-
-  @media screen and (max-width: 995px) {
-    transition: all 0.5s ease-in-out;
-    margin: 9px 7px 9px 0px;
-
-    width: 95%;
-  }
-`;
-
-/*export const NavMenu = styled.div`
+export const NavMenu = styled.div`
   display: flex;
   margin-right: -24px;
   align-items: center;
@@ -144,25 +93,4 @@ export const Searchbar = styled.div`
   @media screen and (max-width: 995px) {
     display: none;
   }
-`;*/
-
-export const Tagbar = styled.div`
-  display: flex;
-  height: 35px;
-  padding: 0.5rem 10px;
-  z-index: 10;
-
-  background: white;
-  box-shadow: 0 1px 3px ${colors.shadow};
-  position: sticky; top: 0; //Makes things sticky <3
-  justify-content: center;
-  padding: 0.5rem calc((100vw - 1000px) / 2);
-
-  @media screen and (min-width: 996px) {
-  }
-`;
-
-export const Tag = styled.div`
-    padding: 0px 8px;
-
 `;
