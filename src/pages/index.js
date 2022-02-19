@@ -1,10 +1,17 @@
 import React from 'react';
+import { SuperContainer, CardL } from './PagesElements';
 
 const Home = () => {
     return (
-        <div style={{display:'flex', justifyContent:'center', alignItems:'center',height:'90vh'}}>
-            <h1>Home</h1>
-        </div>
+
+        <>
+            <SuperContainer>
+                <CardL>
+                    
+                <img src='https://images.pexels.com/photos/2272752/pexels-photo-2272752.jpeg' style={{margin:"auto", width:"1000px", display:"block"}}></img>
+                </CardL>
+            </SuperContainer>
+        </>
     );
 };
 export default Home;

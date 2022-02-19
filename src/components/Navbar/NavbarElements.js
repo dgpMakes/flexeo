@@ -154,12 +154,10 @@ export const Tagbar = styled.div`
 
   background: white;
   box-shadow: 0 1px 3px ${colors.shadow};
-  position: sticky; top: 0; //Makes things sticky <3
+  position: sticky; top: 80px; //Makes things sticky <3
   justify-content: center;
-    padding: 0.5rem calc((100vw - 1000px) / 2);
+  padding: 0.5rem calc((100vw - 1000px) / 2);
 
-  @media screen and (min-width: 996px) {
-  }
 `;
 
 export const Tag = styled.div`
