@@ -6,11 +6,11 @@ export const Nav = styled.nav`
   display: flex;
   height: 80px;
   padding: 0.5rem 10px;
-  z-index: 10;
+  z-index: 9;
 
   background: white;
   box-shadow: 0 1px 3px ${colors.shadow};
-  position: sticky; top: 0; //Makes things sticky <3
+  position: sticky; top: 0px; //Makes things sticky <3
   
   @media screen and (min-width: 996px) {
     justify-content: space-between;
@@ -35,7 +35,7 @@ export const NavLink = styled(Link)`
 `;
 
 export const LogoL = styled.img`
-  @media screen and (max-width: 995px) {
+  @media screen and (max-width: 996px) {
     display: none;
   }
 `;
@@ -54,7 +54,7 @@ export const NavBtn = styled.nav`
   margin-right: 24px;
   align-items: center;
 
-  @media screen and (max-width: 995px) {
+  @media screen and (max-width: 996px) {
     display: none;
   }
 `;
@@ -120,7 +120,7 @@ export const Input = styled.input`
 export const Searchbar = styled.div`
   display: flex;
   width: 38%;
-  margin: 9px 0px 9px 0px;
+  margin: 12px 0px 12px 0px;
   align-items: center;
 
 
@@ -128,23 +128,13 @@ export const Searchbar = styled.div`
   background: ${colors.searchbar};
   border-radius: 0.5rem;
 
-  @media screen and (max-width: 995px) {
+  @media screen and (max-width: 996px) {
     transition: all 0.5s ease-in-out;
     margin: 9px 7px 9px 0px;
 
     width: 95%;
   }
 `;
-
-/*export const NavMenu = styled.div`
-  display: flex;
-  margin-right: -24px;
-  align-items: center;
-
-  @media screen and (max-width: 995px) {
-    display: none;
-  }
-`;*/
 
 export const Tagbar = styled.div`
   display: flex;

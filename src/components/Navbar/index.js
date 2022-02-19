@@ -3,7 +3,7 @@ import { Nav, NavLink, Input, Searchbar, NavBtn, NavBtnLinkSecondary, NavBtnLink
 import Logo_long from '../../images/logo-long.svg';
 import Logo_short from '../../images/logo-short.svg';
 import { IoLogoGoogle, IoMdAddCircleOutline } from 'react-icons/io';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch} from 'react-icons/fa';
 import { colors } from '../../theme';
 
 const Navbar = () => {

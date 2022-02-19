@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   display: flex;
   height: 80px;
   z-index: 10;
-  position: sticky; bottom: 0;
+  position: sticky; bottom: 0px;
 
   background: white;
   box-shadow: 0 1px 3px ${colors.shadow};
