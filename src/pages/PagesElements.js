@@ -12,6 +12,8 @@ export const SuperContainer = styled.div`
 `;
 
 export const Front = styled.div`
+  margin: 40px 0px 0px 0px;
+
   display: flex;
   width:100%;
   height:380px;
@@ -20,21 +22,27 @@ export const Front = styled.div`
 `;
 
 export const CardLText = styled.div`
-  width: 60%;
-  height: 250px;
+  margin: 30px 0px 0px 5px;
+  width: 61%;
+  height: 240px;
+  padding: 0px 0px 0px 40px;
   position: absolute;
   z-index: 2px;
   box-shadow: 0 1px 3px ${colors.shadow};
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  
 
   display:"block";
 `;
 
 export const FrontHoldImage = styled.div`
-  z-index: 1px;
-  width:50%;
-  margin: 5% 50%;
-  height:300px;
+  width:35%;
+  margin: 0% 59%;
+  height:380px;
   overflow:hidden;
   position: absolute;
   border-radius: 15px;
@@ -42,11 +50,25 @@ export const FrontHoldImage = styled.div`
 `;
 
 export const CardLImage = styled.img`
-  width: 100%;
+  width: 700px;
   height: 1000px;
   object-fit: cover;
-  object-position: 55% -664px;
-
+  object-position: 85% -600px;
   display:"block";
 `;
+
+export const IconSet = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const FrontButton = styled.button`
+  padding: 8px 0px 8px 0px;
+  font-size: 20px;
+  width: 150px;
+  color: ${colors.prim};
+  background-color: ${colors.smooth_prim};
+  border-style: none;
+  border-radius: 10px;
+`
 

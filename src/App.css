@@ -5,8 +5,43 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-weight: 450;
 }
 
 h1{
-  font-size: 32px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h2{
+  font-size: 24px;
+  font-weight: 600;
+
+}
+
+h3{
+  font-size: 21px;
+  font-weight: 500;
+}
+
+h4{
+  font-size: 18px;
+  font-weight: 400;
+
+}
+
+h5{
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+h6{
+  font-size: 14px;
+  font-weight: 300;
+}
+
+p{
+  font-size: 16px;
+  font-weight: 400;
 }
