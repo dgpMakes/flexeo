@@ -1,6 +1,7 @@
 import React from 'react';
 import { SuperContainer, Front, CardLImage, FrontHoldImage, CardLText, IconSet, FrontButton, FrontMb} from './PagesElements';
-import { FaSearch,FaHandshake} from 'react-icons/fa';
+import { HlSection, HlSectionButtonRight, HlSectionText, HlSectionTextLeft, Card} from './PagesElements';
+import { FaSearch,FaHandshake, FaArrowRight} from 'react-icons/fa';
 import {BsFillShieldFill} from 'react-icons/bs';
 import { colors
  } from '../theme';
@@ -8,6 +9,7 @@ const Home = () => {
     return (
 
             <SuperContainer>
+                {/* HEADER*/}
                 <Front>
                     <FrontHoldImage>
                         <CardLImage src='https://images.pexels.com/photos/2272752/pexels-photo-2272752.jpeg'></CardLImage>
@@ -24,12 +26,27 @@ const Home = () => {
                         <br/>
                         <FrontButton>Vender ya</FrontButton>
                     </CardLText> 
-                    
                 </Front>
                 <FrontMb>
                     <h4 style={{fontWeight: 500}}>Somos de edición limitada.</h4>
                     <h5 style={{color: colors.font}}>Tu portal de compraventa de zapatillas exclusivas</h5>
                 </FrontMb>
+                
+                 {/* Sneakers selection*/}
+
+                <HlSection>
+                    <HlSectionText>
+                        <HlSectionTextLeft>
+                            <h3>Lo más popular</h3>
+                            <h4>Estas zapas están que lo arden.</h4>
+                        </HlSectionTextLeft>
+                        {/*<HlSectionButtonRight>Ver más <FaArrowRight/></HlSectionButtonRight>*/}
+                    </HlSectionText>
+                    <Card>
+
+                    </Card>
+                </HlSection>
+
         
 
             </SuperContainer>

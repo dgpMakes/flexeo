@@ -26,7 +26,7 @@ export const Front = styled.div`
 `;
 
 export const CardLText = styled.div`
-  margin: 30px 0px 0px 5px;
+  margin: 62px 0px 0px 5px;
   width: 61%;
   height: 240px;
   padding: 0px 0px 0px 40px;
@@ -74,6 +74,12 @@ export const FrontButton = styled.button`
   background-color: ${colors.smooth_prim};
   border-style: none;
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: ${colors.font};
+    color: ${colors.white};
+  }
 `
 
 export const FrontMb = styled.div`
@@ -89,5 +95,27 @@ export const FrontMb = styled.div`
     background-color: ${colors.smooth_prim};
     border-radius: 10px;
   }
+`
+
+export const HlSection = styled.div`
+  width: 100%;
+  margin: 30px 0px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 0px 3px ${colors.searchbar};
+  clear: both;
+
+`
+
+export const HlSectionText = styled.div`
+`
+export const HlSectionTextLeft = styled.div`
+`
+
+export const HlSectionButtonRight = styled.div`
+`
+
+export const Card = styled.div`
+  
 `
 
