@@ -12,13 +12,17 @@ export const SuperContainer = styled.div`
 `;
 
 export const Front = styled.div`
-  margin: 40px 0px 0px 0px;
 
-  display: flex;
-  width:100%;
-  height:380px;
-  overflow:hidden;
-  position: relative;
+  display: none;
+
+  @media screen and (min-width: 996px) {
+    margin: 40px 0px 0px 0px;
+    display: flex;
+    width:100%;
+    height:380px;
+    overflow:hidden;
+    position: relative;
+  }  
 `;
 
 export const CardLText = styled.div`
@@ -70,5 +74,20 @@ export const FrontButton = styled.button`
   background-color: ${colors.smooth_prim};
   border-style: none;
   border-radius: 10px;
+`
+
+export const FrontMb = styled.div`
+  
+  display: none;
+
+  @media screen and (max-width: 996px) {
+    padding: 20px;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    color: ${colors.prim};
+    background-color: ${colors.smooth_prim};
+    border-radius: 10px;
+  }
 `
 

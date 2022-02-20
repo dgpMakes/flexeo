@@ -1,5 +1,5 @@
 import React from 'react';
-import { SuperContainer, Front, CardLImage, FrontHoldImage, CardLText, IconSet, FrontButton} from './PagesElements';
+import { SuperContainer, Front, CardLImage, FrontHoldImage, CardLText, IconSet, FrontButton, FrontMb} from './PagesElements';
 import { FaSearch,FaHandshake} from 'react-icons/fa';
 import {BsFillShieldFill} from 'react-icons/bs';
 import { colors
@@ -26,6 +26,10 @@ const Home = () => {
                     </CardLText> 
                     
                 </Front>
+                <FrontMb>
+                    <h4 style={{fontWeight: 500}}>Somos de edición limitada.</h4>
+                    <h5 style={{color: colors.font}}>Tu portal de compraventa de zapatillas exclusivas</h5>
+                </FrontMb>
         
 
             </SuperContainer>
