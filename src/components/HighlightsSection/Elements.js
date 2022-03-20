@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../theme';
+import { colors } from '../../theme';
 
 export const SuperContainer = styled.div`
   padding: 0.5rem 10px;
@@ -99,7 +99,7 @@ export const FrontMb = styled.div`
 
 export const HlSection = styled.div`
   display: flex;
-  margin: 30px 0px;
+  margin: 30px 0px 10px 0px;
   border-radius: 20px;
   clear: both;
 `
@@ -113,10 +113,11 @@ export const HlSectionTextLeft = styled.div`
 export const HlSectionButtonRight = styled.div`
   margin-left: auto;
   text-align:center;
-  padding: 13px 0px 0px 0px;
+  padding: 8px 0px 0px 0px;
   font-size: 16px;
   font-weight: 400;
-  width: 90px;
+  height: 40px;
+  width: 100px;
   color: ${colors.prim};
   background-color: ${colors.smooth_prim};
   border-style: none;

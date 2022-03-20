@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, CardImage,Text,Title,Subsection,Subtitle,Price,LikeCount,LikeNumber} from './NavbarElements';
+import {Card, CardImage,Text,Title,Subsection,Subtitle,Price,LikeCount,LikeNumber} from './Elements';
 import {FaRegHeart} from 'react-icons/fa'
 import sneaker from '../../images/sneaker.png';
 

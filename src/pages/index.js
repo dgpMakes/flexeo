@@ -1,11 +1,12 @@
 import React from 'react';
-import { SuperContainer, Front, FrontHoldImage, CardLText, IconSet, FrontButton, FrontMb} from './PagesElements';
+import { SuperContainer, Front, FrontHoldImage, CardLText, IconSet, FrontButton, FrontMb, CardSection} from './PagesElements';
 import { FaSearch,FaHandshake} from 'react-icons/fa';
-
-
+import HighlightsSection from '../components/HighlightsSection';
 import {BsFillShieldFill} from 'react-icons/bs';
-import { colors
- } from '../theme';
+import {HiFire} from 'react-icons/hi';
+import {colors} from '../theme';
+import { FiUsers } from 'react-icons/fi';
+
 const Home = () => {
     return (
 
@@ -35,20 +36,8 @@ const Home = () => {
                 
                  {/* Sneakers selection*/}
 
-{/*
-                <HlSection>
-                    <FiUsers size={40} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>
-                    <HlSectionText>
-                        <HlSectionTextLeft>
-                            <h3 style={{color: colors.prim}}>Últimas novedades</h3>
-                            <h4>De gente que sigues.</h4>
-                        </HlSectionTextLeft>
-                    </HlSectionText>
-                    <HlSectionButtonRight>Ver más <FaArrowRight style={{margin:'2px 0px 0px 0px',}}/></HlSectionButtonRight>
-                </HlSection>
-    */}
-
-        
+                <HighlightsSection icon={<HiFire size={40} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Lo más popular" description="Estas zapas están que lo arden."></HighlightsSection>
+                <HighlightsSection icon={<FiUsers size={40} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Últimas novedades" description="De gente que sigas."></HighlightsSection>    
 
             </SuperContainer>
     );

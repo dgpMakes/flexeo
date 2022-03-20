@@ -13,16 +13,15 @@ export const CardImage = styled.img`
   text-decoration: none;
   transform: scaleX(-1);
 
-  width: 230px; 
-  height: 100px; 
+  width: 210px; 
+  height: 120px; 
   object-fit: cover; 
-  object-position: 50% 10%;
-
+  object-position: -10% 40%;
 `;
 
 export const Title = styled.p`
-  font-size:16px;
-  height: 55px;
+  font-size:14px;
+  height: 35px;
   font-weight: 300;
 `;
 
@@ -32,16 +31,17 @@ export const Text = styled.div`
 
 export const Subsection = styled.p`
     display: flex;
+    align-items: center;
 `;
 
 export const Subtitle = styled.p`
-    font-size:16px;
+    font-size:14px;
     display: flex;
     align-items: baseline;
 `;
 
 export const Price = styled.p`
-    font-size:20px;
+    font-size:18px;
     font-weight: 400;
     display: flex;
     
