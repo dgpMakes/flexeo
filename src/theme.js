@@ -4,14 +4,15 @@ export const colors={
     prim: '#8238B8',
     sec:'#3D3DCB',
     ter:'#FF64A2',
-    smooth_prim:'#EADBF6',
+    smooth_prim:'#EFDBFF',
     smooth_sec:'#CEDAFB',
     smooth_ter:'#FFE2F7',
     searchbar:'#E6E6E6',
     i_searchbar:'#999999',
     shadow:'hsla(0,0%,0%,.2)',
-    white:'#fff'
-
+    white:'#fff',
+    un_grey:'#ECECEC',
+    like_count_grey:'#999999'
 }
 
 

@@ -1,0 +1,1 @@
+{"success": false, "error": {"topologyVersion": {"processId": "61f3f74ec27b0ac47fc3f30f", "counter": 423}, "operationTime": "7068654070495445006", "ok": 0, "code": 13435, "codeName": "NotPrimaryNoSecondaryOk", "$clusterTime": {"clusterTime": "7068654113445117954", "signature": {"hash": "wq6LDug1P3j9mwqHPMdWdGzFpgM=", "keyId": "7028556814165737473"}}, "name": "MongoError"}}

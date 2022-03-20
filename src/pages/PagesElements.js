@@ -98,24 +98,41 @@ export const FrontMb = styled.div`
 `
 
 export const HlSection = styled.div`
-  width: 100%;
+  display: flex;
   margin: 30px 0px;
-  padding: 20px;
   border-radius: 20px;
-  box-shadow: inset 0px 0px 0px 3px ${colors.searchbar};
   clear: both;
-
 `
 
 export const HlSectionText = styled.div`
+  display:flex;
 `
 export const HlSectionTextLeft = styled.div`
 `
 
 export const HlSectionButtonRight = styled.div`
+  margin-left: auto;
+  text-align:center;
+  padding: 13px 0px 0px 0px;
+  font-size: 16px;
+  font-weight: 400;
+  width: 90px;
+  color: ${colors.prim};
+  background-color: ${colors.smooth_prim};
+  border-style: none;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: ${colors.font};
+    color: ${colors.white};
+  }
 `
 
-export const Card = styled.div`
-  
+export const CardSection = styled.div`
+  display:flex;
+  width:100%;
 `
+
+
 

@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import NavbarBottom from './components/NavbarBottom';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './pages';
-import About from './pages/about';
+//import Upload from './pages/upload';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" exact element={<Home/>}/>
-        <Route path="/about" exact element={<About/>}/>
+        {/*<Route path="/upload" exact element={<Upload/>}/>*/}
       </Routes>
       <NavbarBottom/>
     </Router>

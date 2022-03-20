@@ -1,7 +1,11 @@
 import React from 'react';
-import { SuperContainer, Front, CardLImage, FrontHoldImage, CardLText, IconSet, FrontButton, FrontMb} from './PagesElements';
-import { HlSection, HlSectionButtonRight, HlSectionText, HlSectionTextLeft, Card} from './PagesElements';
+import { SuperContainer, Front, FrontHoldImage, CardLText, IconSet, FrontButton, FrontMb} from './PagesElements';
+import { HlSection, HlSectionButtonRight, HlSectionText, HlSectionTextLeft, CardSection} from './PagesElements';
 import { FaSearch,FaHandshake, FaArrowRight} from 'react-icons/fa';
+import {FiUsers} from 'react-icons/fi';
+import {HiFire} from 'react-icons/hi';
+import ModelCard from '../components/ModelCard';
+
 import {BsFillShieldFill} from 'react-icons/bs';
 import { colors
  } from '../theme';
@@ -12,7 +16,7 @@ const Home = () => {
                 {/* HEADER*/}
                 <Front>
                     <FrontHoldImage>
-                        <CardLImage src='https://images.pexels.com/photos/2272752/pexels-photo-2272752.jpeg'></CardLImage>
+                        {/*<CardLImage src='https://images.pexels.com/photos/2272752/pexels-photo-2272752.jpeg'></CardLImage>*/}
                     </FrontHoldImage>
                     <CardLText>
                         <h1>Somos de edición limitada.</h1>
@@ -35,17 +39,31 @@ const Home = () => {
                  {/* Sneakers selection*/}
 
                 <HlSection>
+                    <HiFire size={40} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>
                     <HlSectionText>
                         <HlSectionTextLeft>
-                            <h3>Lo más popular</h3>
+                            <h3 style={{color: colors.prim}}>Lo más popular</h3>
                             <h4>Estas zapas están que lo arden.</h4>
                         </HlSectionTextLeft>
-                        {/*<HlSectionButtonRight>Ver más <FaArrowRight/></HlSectionButtonRight>*/}
                     </HlSectionText>
-                    <Card>
-
-                    </Card>
+                    <HlSectionButtonRight >Ver más <FaArrowRight style={{margin:'2px 0px 0px 0px',}}/></HlSectionButtonRight>
                 </HlSection>
+                <CardSection>
+                        <div><ModelCard></ModelCard></div>
+                        
+                </CardSection>
+
+                <HlSection>
+                    <FiUsers size={40} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>
+                    <HlSectionText>
+                        <HlSectionTextLeft>
+                            <h3 style={{color: colors.prim}}>Últimas novedades</h3>
+                            <h4>De gente que sigues.</h4>
+                        </HlSectionTextLeft>
+                    </HlSectionText>
+                    <HlSectionButtonRight>Ver más <FaArrowRight style={{margin:'2px 0px 0px 0px',}}/></HlSectionButtonRight>
+                </HlSection>
+
 
         
 
