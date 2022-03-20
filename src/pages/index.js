@@ -1,10 +1,7 @@
 import React from 'react';
 import { SuperContainer, Front, FrontHoldImage, CardLText, IconSet, FrontButton, FrontMb} from './PagesElements';
-import { HlSection, HlSectionButtonRight, HlSectionText, HlSectionTextLeft, CardSection} from './PagesElements';
-import { FaSearch,FaHandshake, FaArrowRight} from 'react-icons/fa';
-import {FiUsers} from 'react-icons/fi';
-import {HiFire} from 'react-icons/hi';
-import ModelCard from '../components/ModelCard';
+import { FaSearch,FaHandshake} from 'react-icons/fa';
+
 
 import {BsFillShieldFill} from 'react-icons/bs';
 import { colors
@@ -38,21 +35,7 @@ const Home = () => {
                 
                  {/* Sneakers selection*/}
 
-                <HlSection>
-                    <HiFire size={40} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>
-                    <HlSectionText>
-                        <HlSectionTextLeft>
-                            <h3 style={{color: colors.prim}}>Lo más popular</h3>
-                            <h4>Estas zapas están que lo arden.</h4>
-                        </HlSectionTextLeft>
-                    </HlSectionText>
-                    <HlSectionButtonRight >Ver más <FaArrowRight style={{margin:'2px 0px 0px 0px',}}/></HlSectionButtonRight>
-                </HlSection>
-                <CardSection>
-                        <div><ModelCard></ModelCard></div>
-                        
-                </CardSection>
-
+{/*
                 <HlSection>
                     <FiUsers size={40} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>
                     <HlSectionText>
@@ -63,7 +46,7 @@ const Home = () => {
                     </HlSectionText>
                     <HlSectionButtonRight>Ver más <FaArrowRight style={{margin:'2px 0px 0px 0px',}}/></HlSectionButtonRight>
                 </HlSection>
-
+    */}
 
         
 

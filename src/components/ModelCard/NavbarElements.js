@@ -9,12 +9,14 @@ export const Card = styled.div`
 
 export const CardImage = styled.img`
   display: flex;
-  padding: 0 1rem;
   align-items: center;
   text-decoration: none;
-  width: 200px;
-  height: 100px;
   transform: scaleX(-1);
+
+  width: 230px; 
+  height: 100px; 
+  object-fit: cover; 
+  object-position: 50% 10%;
 
 `;
 
