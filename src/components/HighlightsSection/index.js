@@ -1,13 +1,10 @@
 import React from 'react'
-import {HlSection, HlSectionButtonRight, HlSectionText, HlSectionTextLeft, CardSection, Title, SubTitle} from './Elements';
+import {HlSection, HlSectionButtonRight, HlSectionText, HlSectionTextLeft, CardSection, Title, SubTitle,HlSectionButtonEnd} from './Elements';
 
 import ModelCard from '../ModelCard';
 import {FaArrowRight} from 'react-icons/fa';
 
 const HighlightsSection = (props) => {  
-  
-
-
     // Where we're fetching data from
     fetch('http://server1.flexeo.es:8000/v1/recent-products')
     .then(response => response.json())

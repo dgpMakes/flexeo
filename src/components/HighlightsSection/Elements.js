@@ -32,22 +32,19 @@ export const HlSectionButtonRight = styled.div`
     background: ${colors.font};
     color: ${colors.white};
   }
+
 `
 
 export const CardSection = styled.div`
   display:grid;
-  gap: 1rem;
+  gap: 0.6rem;
   grid-auto-flow:dense;
-  grid-auto-rows:22rem;
-  grid-template-columns: repeat(auto-fill,minmax(10.5rem, 1fr));
-  @media screen and (max-width: 996px) {
-    gap: 0.6rem;
-    grid-auto-flow:dense;
-    grid-auto-rows:10.5rem;
-    grid-template-columns: repeat(auto-fill,10.5rem);
-  }
+  grid-auto-rows:10.5rem;
+  grid-template-columns: repeat(auto-fill,minmax(10.5rem, 2fr));
 
-  
+  @media screen and (max-width: 997px) {
+    justify-items: center;
+  }
 `
 
 export const Title = styled.h4`
@@ -58,6 +55,3 @@ export const Title = styled.h4`
 export const SubTitle = styled.h4`
   font-weight: 400;
 `
-
-
-
