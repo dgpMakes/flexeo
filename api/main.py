@@ -1,6 +1,7 @@
 from datetime import datetime
-from pyrsistent import v
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Boolean, DateTime
@@ -11,55 +12,8 @@ from sqlalchemy.orm import sessionmaker
 from pydantic import BaseModel
 import datetime
 import uuid
+import uvicorn
 
-app = FastAPI()
-
-engine = create_engine('postgresql://flexeo:somosflexeros@server1.flexeo.es:5432/flexeo')
-Session = sessionmaker(bind=engine)
-Base = declarative_base()
-
-@app.get("/v1/recent-products")
-def get_products(num:int):
-    products = conexion.execute("select * from product limit "+ str(num))
-    lista = list()
-    for p in products:
-        print(str(p["price"]) + " " + str(p["size"]) + " " + p["description"])
-        product = {"price":p["price"],
-                   "size":p["size"],
-                   "description":p["description"]}
-        lista.append(product)
-
-    print(lista)
-
-    return {
-        "datillos":lista
-    }
-
-@app.get("/v1/product/{product_id}")
-def get_product_by_id(product_id : str):
-
-    products = conexion.execute("select * from product where product_id='"+str(product_id)+"'")
-    product_list = list()
-    for p in products:
-        print(str(p["price"]) + " " + str(p["size"]) + " " + p["description"])
-        product = {"product_id":p["product_id"],
-                   "model_id":p["model_id"],
-                   "user_id":p["user_id"],
-                   "price":p["price"],
-                   "size":p["size"],
-                   "description":p["description"],
-                   "condition":p["condition"],
-                   "are_sent":p["are_sent"],
-                   "time":p["time"],
-                   "booked_user_id":p["booked_user_id"],
-                   "sold":p["sold"],
-                   "deleted":p["deleted"]}
-        product_list.append(product)
-        
-
-    return {
-        "to_return":product_list
-    }
 
 # Pydantic
 class Product(BaseModel):
@@ -77,11 +31,46 @@ class Product(BaseModel):
     class Config:
         orm_mode = True
 
+
+app = FastAPI()
+
+origins = [
+    "*",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+engine = create_engine('postgresql://flexeo:somosflexeros@server1.flexeo.es:5432/flexeo')
+Session = sessionmaker(bind=engine)
+Base = declarative_base()
+
+@app.get("/v1/recent-products", response_model=list[Product])
+def get_products(num:int = 10):
+    session = Session()
+    products = session.query(db_Product).order_by(db_Product.time.desc()).limit(num).all()
+    return products
+
+@app.get("/v1/product/{product_id}", response_model=Product) #response_model te da el formato del return que prefieras
+def get_product_by_id(product_id : str):
+    session = Session()
+    product = session.query(db_Product).filter_by(product_id = product_id).one()
+    return product
+    
+
+
+
 # SqlAlchemy
 class db_Product(Base):
     __tablename__ = "product"
     product_id = Column(UUID(as_uuid=True), primary_key=True, index=True)
-    model_id = Column(UUID(as_uuid=True))
+    model_id = Column(UUID)
     user_id = Column(UUID)
     price = Column(Integer)
     size = Column(Integer)
@@ -101,3 +90,6 @@ def upload_product(product : Product):
     result = session.add(product_to_insert)
     session.commit()
     return result
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", port=8000, reload=True, access_log=False, host='0.0.0.0')
