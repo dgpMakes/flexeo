@@ -12,7 +12,7 @@ export const Nav = styled.nav`
   box-shadow: 0 1px 3px ${colors.shadow};
   position: sticky; top: 0px; //Makes things sticky <3
   
-  @media screen and (min-width: 996px) {
+  @media screen and (min-width: 997px) {
     justify-content: space-between;
     padding: 0.5rem calc((100vw - 1000px) / 2);
   }
@@ -43,7 +43,7 @@ export const LogoL = styled.img`
 export const LogoS = styled(LogoL)`
     display: flex;
     padding: 0px 10px 0px 0px;
-    @media screen and (min-width: 996px) {
+    @media screen and (min-width: 997px) {
     display: none;
   }
 

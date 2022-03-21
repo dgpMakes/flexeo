@@ -12,7 +12,7 @@ export const Nav = styled.nav`
   background: white;
   box-shadow: 0 1px 3px ${colors.shadow};
   justify-content: space-around;
-  @media screen and (min-width: 996px) {
+  @media screen and (min-width: 997px) {
     display: none;
   }
 `;

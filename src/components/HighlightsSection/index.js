@@ -1,12 +1,19 @@
 import React from 'react'
-import { HlSection, HlSectionButtonRight, HlSectionText, HlSectionTextLeft, CardSection} from './Elements';
-import {FiUsers} from 'react-icons/fi';
+import {HlSection, HlSectionButtonRight, HlSectionText, HlSectionTextLeft, CardSection, Title, SubTitle} from './Elements';
 
 import ModelCard from '../ModelCard';
 import {FaArrowRight} from 'react-icons/fa';
-import { colors } from '../../theme';
 
 const HighlightsSection = (props) => {  
+  
+
+
+    // Where we're fetching data from
+    fetch('http://server1.flexeo.es:8000/v1/recent-products')
+    .then(response => response.json())
+    .then(response => console.log(response))
+
+
   return (
     <>
       <HlSection>
@@ -14,15 +21,19 @@ const HighlightsSection = (props) => {
         
         <HlSectionText>
             <HlSectionTextLeft>
-              <h3 style={{color: colors.prim}}>{props.title}</h3>
-              <h4>{props.description}</h4>
+              <Title>{props.title}</Title>
+              <SubTitle>{props.description}</SubTitle>
             </HlSectionTextLeft>
           </HlSectionText>
         <HlSectionButtonRight >Ver más <FaArrowRight style={{margin:'2px 0px 0px 0px',}}/></HlSectionButtonRight>
       </HlSection>
 
       <CardSection>
-        <div><ModelCard></ModelCard></div>
+        <ModelCard></ModelCard>
+        <ModelCard></ModelCard>
+        <ModelCard></ModelCard>
+        <ModelCard></ModelCard>
+        <ModelCard></ModelCard>
       </CardSection>
     </>
   );

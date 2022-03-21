@@ -12,8 +12,8 @@ const ModelCard = () => {
         <Text>
           <Title>Nike Dunk Low Retro White Black (2021)</Title>
           <Subsection>        
-            <Subtitle>Retail:<Price>143€</Price></Subtitle>
-            <LikeCount><LikeNumber>39</LikeNumber><FaRegHeart/></LikeCount>
+            <Subtitle><Price>143€ </Price>&nbsp;en retail</Subtitle>
+            <LikeCount><FaRegHeart/><LikeNumber>39</LikeNumber></LikeCount>
           </Subsection>
         </Text>
       </Card>

@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { colors } from '../theme';
 
 export const SuperContainer = styled.div`
-  padding: 0.5rem 10px;
+  padding: 0.5rem 5px;
   position: sticky; top: 0; //Makes things sticky <3
 
-  @media screen and (min-width: 996px) {
+  @media screen and (min-width: 997px) {
     justify-content: space-between;
     padding: 0.5rem calc((100vw - 955px) / 2);
   }
@@ -15,7 +15,7 @@ export const Front = styled.div`
 
   display: none;
 
-  @media screen and (min-width: 996px) {
+  @media screen and (min-width: 997px) {
     margin: 40px 0px 0px 0px;
     display: flex;
     width:100%;
