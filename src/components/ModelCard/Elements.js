@@ -54,6 +54,7 @@ export const LikeCount = styled.p`
     color: ${colors.like_count_grey};
 
     &:hover {
+    cursor: pointer;
     transition: all 0.2s ease-in-out;
     box-shadow: none;
     color: ${colors.ter};

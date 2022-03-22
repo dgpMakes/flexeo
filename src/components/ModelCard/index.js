@@ -1,19 +1,42 @@
-import React from 'react'
+import {React,useState} from 'react';
 import {Card, CardImage,Text,Title,Subsection,Subtitle,Price,LikeCount,LikeNumber} from './Elements';
-import {FaRegHeart} from 'react-icons/fa'
+import {FaRegHeart, FaHeart} from 'react-icons/fa';
 import sneaker from '../../images/sneaker.png';
+import { colors } from '../../theme';
+//import { useState } from 'react/cjs/react.production.min';
 
-const ModelCard = () => {
-  
+const ModelCard = (props) => {
+
+  const [count, setCount] = useState(12); //reemplazar por nº likes
+  const [likedState, setLikedState] = useState(false);
+
+  function handleLike(){
+    if(!likedState){
+      setCount(count + 1);
+      setLikedState(true);
+    }else{
+      setCount(count - 1);
+      setLikedState(false);
+    }
+  }
+
+  function showIcon(){
+    if(!likedState){
+      return <LikeCount onClick={() => handleLike()}><FaRegHeart/><LikeNumber>{count}</LikeNumber></LikeCount>
+    }else{
+      return <LikeCount style={{color: colors.ter}} onClick={() => handleLike()}><FaHeart/><LikeNumber>{count}</LikeNumber></LikeCount>
+    }
+  }
+
   return (
     <>
       <Card>
         <CardImage src={sneaker} alt='sneaker'></CardImage>
         <Text>
-          <Title>Nike Dunk Low Retro White Black (2021)</Title>
+          <Title>{props.name}</Title>
           <Subsection>        
-            <Subtitle><Price>143€ </Price>&nbsp;en retail</Subtitle>
-            <LikeCount><FaRegHeart/><LikeNumber>39</LikeNumber></LikeCount>
+            <Subtitle><Price>{props.price}€ </Price>&nbsp;en retail</Subtitle>
+            {showIcon()}
           </Subsection>
         </Text>
       </Card>
