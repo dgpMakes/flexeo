@@ -2,6 +2,7 @@ import React from 'react'
 import {HlSection, HlSectionButtonRight, HlSectionText, HlSectionTextLeft, CardSection, Title, SubTitle} from './Elements';
 
 import ModelCard from '../ModelCard';
+import ProductCard from '../ProductCard';
 import {FaArrowRight} from 'react-icons/fa';
 
 export default class HighlightsSection extends React.Component{  
@@ -9,21 +10,21 @@ export default class HighlightsSection extends React.Component{
       super(props);
 
       this.state = {
-        model: "a",
+        content: null,
         DataisLoaded: false
       }
     }
     
     pullData(){
-      fetch("https://api.flexeo.es/v1/recent-models")
+      fetch(this.props.call)
       .then((res) => res.json())
       .then((json) => {
         this.setState({
-          model: json,
+          content: json,
           DataisLoaded: true,
         });
         console.log(json);
-        console.log(this.state.model.length);
+        console.log(this.state.content.length);
       });
     }
 
@@ -60,10 +61,16 @@ export default class HighlightsSection extends React.Component{
     //const cards = this.state.model.map((i) =>
     //  <ModelCard name = {this.state.model[i].name} price = {this.state.model[i].retail_price}></ModelCard>
     //);
-
-    for(let i = 0; i< this.state.model.length;i++){
-      cards.push(<ModelCard key = {"model."+i} name = {this.state.model[i].name} price = {this.state.model[i].retail_price}></ModelCard>);
+    if(this.props.call.includes("model")){
+      for(let i = 0; i< this.state.content.length;i++){
+        cards.push(<ModelCard key = {"model."+i} name = {this.state.content[i].name} price = {this.state.content[i].retail_price}></ModelCard>);
+      }
+    }else if (this.props.call.includes("product")){
+      for(let i = 0; i< this.state.content.length;i++){
+        cards.push(<ProductCard key = {"product."+i} name = {this.state.content[i].description} price = {this.state.content[i].price}></ProductCard>);
+      }
     }
+
     
 return(
   <>

@@ -10,32 +10,31 @@ export const Card = styled.div`
 
 export const CardImage = styled.img`
   display: flex;
-  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   text-decoration: none;
-  transform: scaleX(-1);
-
-  width: 190px; 
-  height: 100px; 
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  margin: 1px 0px 0px 1px;
+  width: 173px; 
+  height: 125px; 
   object-fit: cover; 
-  object-position: 0% 40%;
+  object-position: 0% 100%;
 `;
 
 export const Title = styled.p`
   font-size:14px;
   height: 35px;
-  font-weight: 300;
+  font-weight: 400;
+  color: ${colors.prim};
 
   text-overflow:ellipsis;
+  white-space:nowrap;
   overflow:hidden;
-  // Addition lines for 2 line or multiline ellipsis
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  white-space: normal;
 `;
 
 export const Text = styled.div`
-  padding: 10px;
+  padding: 5px 10px 5px 10px;
 `;
 
 export const Subsection = styled.p`

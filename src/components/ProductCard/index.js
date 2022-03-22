@@ -1,11 +1,11 @@
 import {React,useState} from 'react';
 import {Card, CardImage,Text,Title,Subsection,Subtitle,Price,LikeCount,LikeNumber} from './Elements';
 import {FaRegHeart, FaHeart} from 'react-icons/fa';
-import sneaker from '../../images/sneaker.png';
+import product from '../../images/product.jpg';
 import { colors } from '../../theme';
 //import { useState } from 'react/cjs/react.production.min';
 
-const ModelCard = (props) => {
+const ProductCard = (props) => {
 
   const [count, setCount] = useState(Math.round(100*Math.random())); //reemplazar por nº likes
   const [likedState, setLikedState] = useState(false);
@@ -31,17 +31,17 @@ const ModelCard = (props) => {
   return (
     <>
       <Card>
-        <CardImage src={sneaker} alt='sneaker'></CardImage>
+        <CardImage src={product} alt='product-photo'></CardImage>
         <Text>
-          <Title>{props.name}</Title>
           <Subsection>        
-            <Subtitle><Price>{props.price}€ </Price>&nbsp;en retail</Subtitle>
+            <Subtitle><Price>{props.price}€ </Price></Subtitle>
             {showIcon()}
           </Subsection>
+          <Title>@{props.name}</Title>
         </Text>
       </Card>
     </>
   );
 };
 
-export default ModelCard;
+export default ProductCard;
