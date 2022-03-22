@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date, datetime
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -31,7 +31,6 @@ class Product(BaseModel):
     class Config:
         orm_mode = True
 
-
 app = FastAPI()
 
 origins = [
@@ -55,12 +54,16 @@ Base = declarative_base()
 def get_products(num:int = 10):
     session = Session()
     products = session.query(db_Product).order_by(db_Product.time.desc()).limit(num).all()
+    session.close()
     return products
+
+
 
 @app.get("/v1/product/{product_id}", response_model=Product) #response_model te da el formato del return que prefieras
 def get_product_by_id(product_id : str):
     session = Session()
     product = session.query(db_Product).filter_by(product_id = product_id).one()
+    session.close()
     return product
     
 
@@ -82,6 +85,24 @@ class db_Product(Base):
     sold = Column(Boolean)
     deleted = Column(Boolean)
 
+class db_Model(Base):
+    __tablename__ = "model"
+    model_id = Column(UUID(as_uuid=True), primary_key=True, index=True)
+    api_id = Column(UUID)
+    sku = Column(String)
+    brand = Column(String)
+    name = Column(String)
+    colorway = Column(String)
+    gender = Column(String)
+    release_year = Column(Integer)
+    retail_date = Column(String)
+    retail_price = Column(Integer)
+    estimated_market_value = Column(Integer)
+    image_url = Column(String)
+
+    class Config:
+        orm_mode = True
+
 @app.post("/v1/upload_product", response_model=Product) #Front should warn when everything is valid
 def upload_product(product : Product):
     product_to_insert = db_Product(product_id=uuid.uuid4(), deleted=False, **product.dict())
@@ -89,7 +110,15 @@ def upload_product(product : Product):
     session = Session()
     result = session.add(product_to_insert)
     session.commit()
+    session.close()
     return result
 
+@app.get("/v1/recent-models", response_model=list)
+def get_models(num:int = 10):
+    session = Session()
+    models = session.query(db_Model).order_by(db_Model.retail_date.desc()).limit(num).all()
+    session.close()
+    return models
+
 if __name__ == "__main__":
-    uvicorn.run("main:app", port=8000, reload=True, access_log=False, host='0.0.0.0')
+    uvicorn.run("main:app", port=8080, reload=True, host='0.0.0.0')
