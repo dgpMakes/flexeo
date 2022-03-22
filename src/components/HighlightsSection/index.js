@@ -15,7 +15,7 @@ export default class HighlightsSection extends React.Component{
     }
     
     pullData(){
-      fetch("http://server1.flexeo.es:8000/v1/recent-models")
+      fetch("https://api.flexeo.es/v1/recent-models")
       .then((res) => res.json())
       .then((json) => {
         this.setState({
