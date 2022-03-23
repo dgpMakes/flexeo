@@ -7,7 +7,6 @@ import { SuperContainer} from './pages/PagesElements';
 import Footer from './components/Footer';
 //import Upload from './pages/upload';
 
-
 function App() {
   return (
 
