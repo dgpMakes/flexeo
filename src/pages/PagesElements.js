@@ -3,7 +3,7 @@ import { colors } from '../theme';
 
 export const SuperContainer = styled.div`
   padding: 0.5rem 5px;
-  position: sticky; top: 0; //Makes things sticky <3
+  //position: sticky; top: 0; //Makes things sticky <3
 
   @media screen and (min-width: 997px) {
     justify-content: space-between;
@@ -33,7 +33,7 @@ export const CardLText = styled.div`
   position: absolute;
   z-index: 2px;
   box-shadow: 0 1px 3px ${colors.shadow};
-  border-radius: 15px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -46,10 +46,10 @@ export const CardLText = styled.div`
 export const FrontHoldImage = styled.div`
   width:35%;
   margin: 0% 59%;
-  height:380px;
+  height:370px;
   overflow:hidden;
   position: absolute;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 1px 3px ${colors.shadow};
 `;
 
@@ -73,7 +73,7 @@ export const FrontButton = styled.button`
   color: ${colors.prim};
   background-color: ${colors.smooth_prim};
   border-style: none;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: all 0.2s ease-in-out;
 
   &:hover {
@@ -93,46 +93,12 @@ export const FrontMb = styled.div`
     font-size: 20px;
     color: ${colors.prim};
     background-color: ${colors.smooth_prim};
-    border-radius: 10px;
+    border-radius: 5px;
   }
 `
 
-export const HlSection = styled.div`
-  display: flex;
-  margin: 30px 0px;
-  border-radius: 20px;
-  clear: both;
-`
 
-export const HlSectionText = styled.div`
-  display:flex;
-`
-export const HlSectionTextLeft = styled.div`
-`
 
-export const HlSectionButtonRight = styled.div`
-  margin-left: auto;
-  text-align:center;
-  padding: 13px 0px 0px 0px;
-  font-size: 16px;
-  font-weight: 400;
-  width: 90px;
-  color: ${colors.prim};
-  background-color: ${colors.smooth_prim};
-  border-style: none;
-  border-radius: 10px;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    background: ${colors.font};
-    color: ${colors.white};
-  }
-`
-
-export const CardSection = styled.div`
-  display:flex;
-  width:100%;
-`
 
 
 

@@ -3,7 +3,7 @@ import { colors } from '../../theme';
 
 export const HlSection = styled.div`
   display: flex;
-  margin: 30px 0px 10px 0px;
+  margin: 25px 0px 10px 0px;
   border-radius: 20px;
   clear: both;
 `
@@ -20,12 +20,12 @@ export const HlSectionButtonRight = styled.div`
   padding: 8px 0px 0px 0px;
   font-size: 16px;
   font-weight: 400;
-  height: 40px;
+  height: 38px;
   width: 100px;
   color: ${colors.prim};
   background-color: ${colors.smooth_prim};
   border-style: none;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: all 0.2s ease-in-out;
 
   &:hover {

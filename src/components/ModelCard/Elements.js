@@ -6,6 +6,7 @@ export const Card = styled.div`
   width: 175px;
   height: 175px;
   border-radius: 10px;
+  background-color: white;
 `;
 
 export const CardImage = styled.img`

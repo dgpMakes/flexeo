@@ -12,7 +12,9 @@ export const colors={
     shadow:'hsla(0,0%,0%,.2)',
     white:'#fff',
     un_grey:'#ECECEC',
-    like_count_grey:'#999999'
+    like_count_grey:'#999999',
+    background_light_grey:'#FAFAFA',
+    background_grey:'#F5F2F8'
 }
 
 
