@@ -8,8 +8,8 @@ const UploadForm = () => {
         <>
             {/* HEADER*/}
             <Background>
-                <Container style={{boxShadow: 'inset 0px 0px 0px 3px #E6E6E6'}}>
-                    <Block style={{margin:'0px 0px 16px 0px'}}>
+                <Container>
+                    <Block>
                         <Title style={{lineHeight:'16px'}}>SUBIR TUS ZAPAS</Title>
                         <Subtitle>UPLOAD SNEAKERS</Subtitle>
                     </Block>
@@ -22,14 +22,14 @@ const UploadForm = () => {
                             <Name>Precio (€)</Name>
                             <ToFill type="text" placeholder="¿Cuánto pides?" style={{width: '140px', margin:'0px 20px 0px 0px'}}></ToFill>
                         </div>
-                        <div>
+                        <div style={{width: '200px'}}>
                             <Name>Talla (EU)</Name>
-                            <ToSelect type="text" placeholder="Talla" style={{width: '120px'}}></ToSelect>
+                            <ToSelect type="text" name="Talla" ></ToSelect>
                         </div>
                     </Block>
                     <Block>
                         <Name>Estado</Name>
-                        <ToSelect placeholder="Escoge un estado"></ToSelect>
+                        <ToSelect name="Escoge un estado..."></ToSelect>
                     </Block>
                     <Block>
                         <Name>Descripción</Name>

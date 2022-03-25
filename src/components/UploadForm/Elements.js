@@ -4,7 +4,7 @@ import { colors } from '../../theme';
 
 export const Background = styled.div`
     margin: 50px 0px 0px 0px;
-    width: max(330px,30%);
+    width: max(350px,30%);
 `
 
 export const Container = styled.div`
@@ -14,7 +14,7 @@ export const Container = styled.div`
 `
 
 export const Block = styled.div`
- margin: 0px 0px 8px 0px;
+ margin: 0px 0px 13px 0px;
 `
 
 export const Title = styled.h4`
@@ -32,10 +32,11 @@ export const Subtitle = styled.h4`
 `
 
 export const ToFill = styled.input`
-    box-shadow: inset 0px 0px 0px 2px ${colors.searchbar};
-    height: 30px;
+    box-shadow: inset 0px 0px 0px 1px ${colors.searchbar};
+    height: 38px;
     padding: 10px;
     font-weight: 400;
+    font-size: 16px;
     width: max(280px,30%);
     padding: 0px 10px;
     border-radius: 5px;
@@ -54,7 +55,7 @@ export const Name = styled.h5`
 
 export const ToogleName = styled.h5`
     margin: 2px 5px 0px 0px;
-    font-size: 14px;
+    font-size: 16px;
 `
 
 /*export const ToSelect = styled.input`
