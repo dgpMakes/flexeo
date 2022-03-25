@@ -12,5 +12,7 @@ services:
     - "api"
   api:
     build: .
+    volumes: 
+    - ./main.py:/code/main.py
     ports:
       - "8080:8080"

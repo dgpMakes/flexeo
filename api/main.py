@@ -13,6 +13,10 @@ from pydantic import BaseModel
 import datetime
 import uuid
 import uvicorn
+from google.oauth2 import id_token
+from google.auth.transport import requests
+import jwt
+import json
 
 
 # Pydantic
@@ -119,6 +123,31 @@ def get_models(num:int = 10):
     models = session.query(db_Model).order_by(db_Model.retail_date.desc()).limit(num).all()
     session.close()
     return models
+
+
+class GoogleLoginPost(BaseModel):
+    id_token: str
+
+
+
+@app.post("/v1/google-login") #response_model te da el formato del return que prefieras
+def get_product_by_id(googleLogin : GoogleLoginPost):
+    print(googleLogin.id_token)
+    data = id_token.verify_oauth2_token(googleLogin.id_token, requests.Request(), "677485879058-rf5hin9fb0ljio7usi0379lijrq6i4ih.apps.googleusercontent.com")
+    correo = data["email"]
+    print(data)
+    payload = {
+        "email": correo,
+        "expiry": (datetime.datetime.now()+datetime.timedelta(days=7)).isoformat()
+
+    }
+    encoded = jwt.encode(payload, "contraseña", algorithm="HS256")
+    print(encoded)
+
+    return encoded
+
+
+
 
 if __name__ == "__main__":
     uvicorn.run("main:app", port=8080, reload=True, host='0.0.0.0')
