@@ -38,12 +38,12 @@ const Navbar = () => {
         </NavBtn>
       </Nav>
       <Tagbar>
-          <Tag>Nike</Tag>
-          <Tag>Adidas</Tag>
-          <Tag>FILA</Tag>
-          <Tag>Reebok</Tag>
-          <Tag>Puma</Tag>
-        </Tagbar>
+        <Tag>Nike</Tag>
+        <Tag>Adidas</Tag>
+        <Tag>FILA</Tag>
+        <Tag>Reebok</Tag>
+        <Tag>Puma</Tag>
+      </Tagbar>
       
 
     </>

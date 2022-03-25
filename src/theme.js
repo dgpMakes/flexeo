@@ -1,7 +1,7 @@
 export const colors={
     font: '#05053A',
     body: '#707092',
-    prim: '#8238B8',
+    prim: '#9638DD',
     sec:'#3D3DCB',
     ter:'#FF64A2',
     smooth_prim:'#EFDBFF',

@@ -143,7 +143,7 @@ export const Tagbar = styled.div`
   z-index: 10;
 
   background: white;
-  box-shadow: 0 1px 3px ${colors.shadow};
+  background-color:  ${colors.background_grey};
   position: sticky; top: 80px; //Makes things sticky <3
   justify-content: center;
   padding: 0.5rem calc((100vw - 1000px) / 2);

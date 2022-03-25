@@ -10,10 +10,11 @@ import {FiUsers} from 'react-icons/fi';
 const Home = () => {
     return (
         <>
-                {/* HEADER*/}
+                {/* HEADER
                 <Front>
                     <FrontHoldImage>
-                        {/*<CardLImage src='https://images.pexels.com/photos/2272752/pexels-photo-2272752.jpeg'></CardLImage>*/}
+                        {/*<CardLImage src='https://images.pexels.com/photos/2272752/pexels-photo-2272752.jpeg'></CardLImage>
+                        
                     </FrontHoldImage>
                     <CardLText>
                         <h1>Somos de edición limitada.</h1>
@@ -31,12 +32,12 @@ const Home = () => {
                 <FrontMb>
                     <h4 style={{fontWeight: 500}}>Somos de edición limitada.</h4>
                     <h5 style={{color: colors.font}}>Tu portal de compraventa de zapatillas exclusivas</h5>
-                </FrontMb>
+                </FrontMb>*/}
                 
                  {/* Sneakers selection*/}
 
-                <HighlightsSection icon={<HiFire size={40} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Lo más popular" description="Estas zapas están que lo arden." call="https://api.flexeo.es/v1/recent-models"></HighlightsSection>
-                <HighlightsSection icon={<FiUsers size={40} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Últimas novedades" description="De gente que sigues." call="https://api.flexeo.es/v1/recent-products"></HighlightsSection>    
+                <HighlightsSection icon={<HiFire size={28} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Lo más popular" description="Estas zapas están que lo arden." call="https://api.flexeo.es/v1/recent-models"></HighlightsSection>
+                <HighlightsSection icon={<FiUsers size={28} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Últimas novedades" description="De gente que sigues." call="https://api.flexeo.es/v1/recent-products"></HighlightsSection>    
                 </>
     );
 };
