@@ -62,7 +62,7 @@ const Footer = (props) => {
         </RelevantTags>
         <RelevantPages>
           <LogoCopyright>
-            <Logo style={{height:'25px', margin:'5px 0px 0px 0px'}} src={LogoSVG}></Logo>
+            <Logo style={{height:'25px', margin:'5px 0px 0px 0px'}} src={LogoSVG} alt="Logo"></Logo>
             <Copyright>Copyright © {(new Date().getFullYear())} FLEXEO © de sus respectivos propietarios</Copyright>
           </LogoCopyright>
           <RelevantPagesList>
