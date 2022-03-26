@@ -4,7 +4,7 @@ import { colors } from '../../theme';
 export const Card = styled.div`
   box-shadow: inset 0px 0px 0px 1px ${colors.un_grey};
   width: 175px;
-  height: 175px;
+  height: 223px;
   border-radius: 10px;
   background-color: white;
 `;
@@ -18,7 +18,7 @@ export const CardImage = styled.img`
   border-top-left-radius: 10px;
   margin: 1px 0px 0px 1px;
   width: 173px; 
-  height: 125px; 
+  height: 173px; 
   object-fit: cover; 
   object-position: 0% 100%;
 `;

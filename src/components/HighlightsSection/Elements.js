@@ -10,6 +10,7 @@ export const HlSection = styled.div`
 
 export const HlSectionText = styled.div`
   display:flex;
+  
 `
 export const HlSectionTextLeft = styled.div`
 `
@@ -20,6 +21,7 @@ export const HlSectionButtonRight = styled.div`
   padding: 8px 0px 0px 0px;
   font-size: 16px;
   font-weight: 400;
+  
   height: 38px;
   width: 100px;
   color: ${colors.prim};
@@ -39,8 +41,8 @@ export const CardSection = styled.div`
   display:grid;
   gap: 0.6rem;
   grid-auto-flow:dense;
-  grid-auto-rows:10.5rem;
-  grid-template-columns: repeat(auto-fill,minmax(10.5rem, 2fr));
+  grid-auto-rows:14rem;
+  grid-template-columns: repeat(auto-fill,minmax(10rem, 2fr));
 
   @media screen and (max-width: 997px) {
     justify-items: center;

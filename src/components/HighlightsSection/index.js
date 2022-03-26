@@ -78,11 +78,11 @@ return(
       <div>{this.props.icon}</div>
       <HlSectionText>
           <HlSectionTextLeft>
-            <Title>{this.props.title}</Title>
+            <Title style={{textTransform: 'uppercase',fontStyle: 'italic'}}>{this.props.title}</Title>
             <SubTitle>{this.props.description}</SubTitle>
           </HlSectionTextLeft>
         </HlSectionText>
-      <HlSectionButtonRight >Ver más <FaArrowRight style={{margin:'2px 0px 0px 0px',}}/></HlSectionButtonRight>
+      <HlSectionButtonRight>Ver más <FaArrowRight style={{margin:'2px 0px 0px 0px',}}/></HlSectionButtonRight>
     </HlSection>
 
     <CardSection>

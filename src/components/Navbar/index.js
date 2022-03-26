@@ -5,7 +5,6 @@ import Logo_short from '../../images/logo-short.svg';
 import { IoLogoGoogle, IoMdAddCircleOutline } from 'react-icons/io';
 import { FaSearch} from 'react-icons/fa';
 import { colors } from '../../theme';
-import GoogleLogin from 'react-google-login';
 import Cookies from 'universal-cookie';
 import LoginButton from '../LoginButton';
 
@@ -13,25 +12,6 @@ import LoginButton from '../LoginButton';
 //secret-client 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
 
 const Navbar = () => {
-
-  const responseGoogle = (response) => {
-    
-    console.log(response.tokenId)
-
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id_token: response.tokenId })
-    };
-
-    fetch('https://api.flexeo.es/v1/google-login', requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            const cookies = new Cookies();
-            cookies.set('auth', data, { path: '/' });
-          }
-        );
-    }
 
   return (
     <>

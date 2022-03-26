@@ -1,7 +1,7 @@
 import React from 'react'
 import { Nav, NavBtn, NavBtnLinkSecondary, NavBtnLink} from './NavbarElements';
 import { IoLogoGoogle, IoMdAddCircleOutline } from 'react-icons/io';
-
+import LoginButton from '../LoginButton';
 const NavbarBottom = () => {
   return (
     <>
@@ -15,7 +15,7 @@ const NavbarBottom = () => {
           </div>
         </NavMenu>*/}
         <NavBtn>
-          <NavBtnLinkSecondary to="/sign-in"><IoLogoGoogle size={20} style={{ margin: "0px 3px 0px 0px", verticalAlign: 'middle' }} />Entrar con Google</NavBtnLinkSecondary>
+          <LoginButton/>
           <NavBtnLink to="/upload"><IoMdAddCircleOutline size={20} style={{ margin: "0px 3px 0px 0px", verticalAlign: 'middle' }} />Sube tus zapas</NavBtnLink>
         </NavBtn>
       </Nav>
