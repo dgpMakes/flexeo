@@ -19,12 +19,12 @@ class Toogle extends Component {
         {/*<span>Switch with default style</span>*/}
         <Switch  
             activeBoxShadow="0px 0px 1px 5px hsla(0,0%,0%,.1)"
-            width={40}
-            height={20}
+            width={50}
+            height={30}
             onChange={this.handleChange}
             onColor = {colors.prim}
             offColor = {colors.font}
-            handleDiameter={14} 
+            handleDiameter={22} 
             checkedIcon={
                 <div
                 style={{
@@ -32,7 +32,7 @@ class Toogle extends Component {
                     justifyContent: "center",
                     alignItems: "center",
                     height: "100%",
-                    fontSize: 10,
+                    fontSize: 12,
                     fontWeight:400,
                     color: colors.white,
                     paddingRight: 2
@@ -49,7 +49,7 @@ class Toogle extends Component {
                     justifyContent: "center",
                     alignItems: "center",
                     height: "100%",
-                    fontSize: 10,
+                    fontSize: 12,
                     fontWeight:400,
                     color: colors.white,
                     paddingRight: 2
