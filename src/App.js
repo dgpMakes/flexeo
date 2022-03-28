@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
+import NavbarUser from './components/NavbarUser';
 import NavbarBottom from './components/NavbarBottom';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './pages';
@@ -9,9 +10,9 @@ import Upload from './pages/upload';
 
 function App() {
   return (
-
+    
     <Router>
-      <Navbar/>
+      <NavbarUser/>
         <SuperContainer>
           <Routes>
             <Route path="/" exact element={<Home/>}/>

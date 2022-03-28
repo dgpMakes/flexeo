@@ -7,6 +7,7 @@ class Toogle extends Component {
     super();
     this.state = { checked: false };
     this.handleChange = this.handleChange.bind(this);
+    this.props.onChange('are_sent', false);
   }
 
   handleChange(checked) {

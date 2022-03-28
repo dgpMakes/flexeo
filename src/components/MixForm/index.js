@@ -1,35 +1,36 @@
 import React from 'react';
-import { withFormik } from 'formik';
+import { withFormik, Field } from 'formik';
 import * as Yup from 'yup';
 import Select from 'react-select';
 import { Background, Container, Block, Title, ToFill, ToFillBig, Name, ToogleName, ToImage, Subtitle, VerticalDiv, VerticalText } from './Elements';
 import { colors } from '../../theme';
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { StyledButton } from '../ProductForm/Elements';
-import Toogle from '../Toogle';
+
 const formikEnhancer = withFormik({
     validationSchema: Yup.object().shape({
         modelName: Yup.object()
             .required("Escoge un modelo del catálogo"),
         price: Yup.number()
-        .max(9999, "Tiene que estar por debajo de 10.000€")
-        .required("Introduce el precio de venta"),
+            .max(9999, "Tiene que estar por debajo de 10.000€")
+            .required("Introduce el precio de venta"),
         size: Yup.object()
             .required("Escoge una talla"),
         condition: Yup.object()
             .required("Escoge un estado"),
-        are_sent: Yup.boolean()
+        are_sent: Yup.boolean(),
+        negotiable:Yup.boolean()
     }),
     mapPropsToValues: props => ({
         modelName: '',
         price: '',
         size: '',
         condition: '',
-        are_sent:''
+        are_sent: false
     }),
     handleSubmit: (values, { setSubmitting }) => {
         const payload = {
-            ...values,modelName: values.modelName.value, size: values.size.value, condition: values.condition.value
+            ...values, modelName: values.modelName.value, size: values.size.value, condition: values.condition.value
         };
         setTimeout(() => {
             alert(JSON.stringify(payload, null, 2));
@@ -68,7 +69,6 @@ const MyForm = props => {
                     </Block>
                     <form onSubmit={handleSubmit}>
 
-                        <Name>Modelo</Name>
                         <MySelect
                             label="Modelo"
                             value={values.modelName}
@@ -77,7 +77,10 @@ const MyForm = props => {
                             error={errors.modelName}
                             touched={touched.modelName}
                         />
-
+                        {errors.modelName &&
+                            touched.modelName && (
+                                <div style={{ color: 'red', marginTop: '.5rem' }}>{errors.modelName}</div>
+                            )}
                         <label htmlFor="Precio" style={{ display: 'block' }}>
                             Precio (€)
                         </label>
@@ -96,7 +99,6 @@ const MyForm = props => {
 
                         <MySelect
                             label="Talla (EU)"
-
                             value={values.size}
                             onChange={setFieldValue}
                             onBlur={setFieldTouched}
@@ -119,6 +121,19 @@ const MyForm = props => {
                             touched.condition && (
                                 <div style={{ color: 'red', marginTop: '.5rem' }}>{errors.condition}</div>
                             )}
+                        
+                        <label htmlFor="Envío" style={{ display: 'block' }}>Envío</label>
+                        <div style={{ display: 'flex' }}>
+                            <Field type="checkbox" name="are_sent" />
+                            <Name>Hago envíos</Name>
+                        </div>
+
+                        <label htmlFor="Negociar" style={{ display: 'block' }}>¿Negociable?</label>
+                        <div style={{ display: 'flex' }}>
+                            <Field type="checkbox" name="negotiable" />
+                            <Name >Acepto ofertas</Name>
+                        </div>
+
                         {/*<StyledButton
                             label="button"
                             className="outline"
@@ -127,7 +142,7 @@ const MyForm = props => {
                         >
                             Reset
                             </StyledButton>*/}
-                        <Toogle></Toogle>
+
                         <StyledButton type="submit" disabled={isSubmitting}>
                             Submit
                         </StyledButton>
@@ -142,18 +157,18 @@ const MyForm = props => {
 function optionList(listType) {
     if (listType.includes("Talla")) {
         return [
-            { value: '35', label: '35' },{ value: '35.5', label: '35.5' },
-            { value: '36', label: '36' },{ value: '36.5', label: '36.5' },
-            { value: '37', label: '37' },{ value: '37.5', label: '37.5' },
-            { value: '38', label: '38' },{ value: '38.5', label: '38.5' },
-            { value: '39', label: '39' },{ value: '39.5', label: '39.5' },
-            { value: '40', label: '40' },{ value: '40.5', label: '40.5' },
-            { value: '41', label: '41' },{ value: '41.5', label: '41.5' },
-            { value: '42', label: '42' },{ value: '42.5', label: '42.5' },
-            { value: '43', label: '43' },{ value: '43.5', label: '43.5' },
-            { value: '44', label: '44' },{ value: '44.5', label: '44.5' },
-            { value: '45', label: '45' },{ value: '45.5', label: '45.5' },
-            { value: '46', label: '46' },{ value: '46.5', label: '46.5' },{ value: '47', label: '47' }
+            { value: '35', label: '35' }, { value: '35.5', label: '35.5' },
+            { value: '36', label: '36' }, { value: '36.5', label: '36.5' },
+            { value: '37', label: '37' }, { value: '37.5', label: '37.5' },
+            { value: '38', label: '38' }, { value: '38.5', label: '38.5' },
+            { value: '39', label: '39' }, { value: '39.5', label: '39.5' },
+            { value: '40', label: '40' }, { value: '40.5', label: '40.5' },
+            { value: '41', label: '41' }, { value: '41.5', label: '41.5' },
+            { value: '42', label: '42' }, { value: '42.5', label: '42.5' },
+            { value: '43', label: '43' }, { value: '43.5', label: '43.5' },
+            { value: '44', label: '44' }, { value: '44.5', label: '44.5' },
+            { value: '45', label: '45' }, { value: '45.5', label: '45.5' },
+            { value: '46', label: '46' }, { value: '46.5', label: '46.5' }, { value: '47', label: '47' }
         ]
     }
 
