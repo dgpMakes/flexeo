@@ -12,7 +12,7 @@ function App() {
   return (
     
     <Router>
-      <NavbarUser/>
+      <Navbar/>
         <SuperContainer>
           <Routes>
             <Route path="/" exact element={<Home/>}/>
@@ -20,7 +20,7 @@ function App() {
           </Routes>
         </SuperContainer>
         <Footer></Footer>
-      <NavbarBottom/>
+      <Navbar/>
     </Router>
       
   );
