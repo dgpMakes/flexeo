@@ -16,7 +16,9 @@ export default class HighlightsSection extends React.Component{
     }
     
     pullData(){
-      fetch(this.props.call)
+      fetch(this.props.call, {
+        credentials: 'include'
+      })
       .then((res) => res.json())
       .then((json) => {
         this.setState({
