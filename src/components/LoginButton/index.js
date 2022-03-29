@@ -22,7 +22,7 @@ const LoginButton = () => {
       .then(response => response.json())
       .then(data => {
         const cookies = new Cookies();
-        cookies.set('auth', data, { path: '/' , domain: 'api.flexeo.es'});
+        cookies.set('auth', data, { path: '/' , domain: '.flexeo.es'});
       }
       );
   }
