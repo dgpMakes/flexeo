@@ -7,6 +7,7 @@ import {HiFire} from 'react-icons/hi';
 import {colors} from '../theme';
 import {FiUsers} from 'react-icons/fi';
 
+
 const Home = () => {
     return (
         <>
