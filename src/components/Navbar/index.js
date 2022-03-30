@@ -14,12 +14,11 @@ import {FiUsers} from 'react-icons/fi';
 //client-id 677485879058-rf5hin9fb0ljio7usi0379lijrq6i4ih.apps.googleusercontent.com
 //secret-client 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
 
-function Menu(data) {
+{/*function Menu(data) {
 
   if (data = null) {
     return <LoginButton />;
   } else {
-    console.log(data.name)
     return (<><div style={{margin:'0px 10px 0px 0px'}}>
             <AiOutlineHome/>
             <h6>Inicio</h6>
@@ -39,9 +38,9 @@ function Menu(data) {
           </div></>)
     
   }
-}
+}*/}
 
-const Navbar = (props) => {
+const Navbar = () => {
 
   return (
     <>
@@ -54,7 +53,7 @@ const Navbar = (props) => {
           <FaSearch size={20} style={{ color: colors.i_searchbar, margin: "0px 0px 0px 15px", verticalAlign: 'middle' }} /><Input type="text" placeholder="Buscar zapatillas" />
         </Searchbar>
         <NavBtn>
-          <LoginButton />
+          <LoginButton/>
           <NavBtnLink to="/upload"><IoMdAddCircleOutline size={20} style={{ margin: "0px 3px 0px 0px", verticalAlign: 'middle' }} />Sube tus zapas</NavBtnLink>
         </NavBtn>
       </Nav>
