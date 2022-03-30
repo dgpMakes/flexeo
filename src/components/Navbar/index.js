@@ -13,7 +13,10 @@ import LoginButton from '../LoginButton';
 
 function getCookie(key) {
   var b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
-  token = b[0];
+  if(b == null){
+    return;
+  }
+  var token = b[0];
   token = token.substring(8);
   var base64Url = token.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
