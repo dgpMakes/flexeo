@@ -11,11 +11,17 @@ import LoginButton from '../LoginButton';
 //client-id 677485879058-rf5hin9fb0ljio7usi0379lijrq6i4ih.apps.googleusercontent.com
 //secret-client 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
 
+function getCookie(key) {
+  var b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
+  console.log(b);
+}
+
 const Navbar = () => {
 
   return (
     <>
       <Nav>
+        {getCookie("auth")}
         <NavLink to="/">
           <LogoL src={Logo_long} alt='logo' />
           <LogoS src={Logo_short} alt='logo' />
