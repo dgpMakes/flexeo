@@ -13,7 +13,7 @@ import LoginButton from '../LoginButton';
 
 function getCookie(key) {
   var b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
-  console.log(b);
+  console.log(b[0]);
 }
 
 const Navbar = () => {
