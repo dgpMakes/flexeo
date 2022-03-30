@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from fastapi import FastAPI
+from fastapi import FastAPI, Cookie
 from fastapi.middleware.cors import CORSMiddleware
 
 from sqlalchemy import create_engine
@@ -38,7 +38,8 @@ class Product(BaseModel):
 app = FastAPI()
 
 origins = [
-    "*",
+    "http://localhost:3000",
+    "https://flexeo.es"
 ]
 
 app.add_middleware(
@@ -118,7 +119,8 @@ def upload_product(product : Product):
     return result
 
 @app.get("/v1/recent-models", response_model=list)
-def get_models(num:int = 10):
+def get_models(num : int = 10, auth : str | None = Cookie(None)):
+    print("auth cookie -> " + str(auth))
     session = Session()
     models = session.query(db_Model).order_by(db_Model.retail_date.desc()).limit(num).all()
     session.close()
@@ -129,17 +131,22 @@ class GoogleLoginPost(BaseModel):
     id_token: str
 
 
-
 @app.post("/v1/google-login") #response_model te da el formato del return que prefieras
 def get_product_by_id(googleLogin : GoogleLoginPost):
     print(googleLogin.id_token)
     data = id_token.verify_oauth2_token(googleLogin.id_token, requests.Request(), "677485879058-rf5hin9fb0ljio7usi0379lijrq6i4ih.apps.googleusercontent.com")
-    correo = data["email"]
+    email = data["email"]
+    name = data["given_name"]
+    surname = data["family_name"]
+    photo = data["picture"]
+
     print(data)
     payload = {
-        "email": correo,
-        "expiry": (datetime.datetime.now()+datetime.timedelta(days=7)).isoformat()
-
+        "email": email,
+        "name": name,
+        "surname": surname,
+        "photo": photo,
+        "expiry": (datetime.datetime.now()+datetime.timedelta(hours=3)).isoformat()
     }
     encoded = jwt.encode(payload, "contraseña", algorithm="HS256")
     print(encoded)
