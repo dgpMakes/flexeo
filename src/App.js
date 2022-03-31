@@ -22,7 +22,6 @@ function getCookie(key) {
     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
   }).join(''));
 
-  console.log("ee" + JSON.parse(jsonPayload))
   return JSON.parse(jsonPayload);
 }
 
@@ -31,7 +30,6 @@ function App() {
     
     <Router>
       <Navbar data={getCookie("auth")}/>
-      {console.log(getCookie("auth"))}
 
         <SuperContainer>
           <Routes>

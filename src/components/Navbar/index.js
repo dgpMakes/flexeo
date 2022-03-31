@@ -22,6 +22,7 @@ function Menu(data) {
     return (<><div style={{margin:'0px 10px 0px 0px'}}>
             <AiOutlineHome/>
             <h6>Inicio</h6>
+            <h6>{data.name}</h6>
           </div>
           
           <div style={{margin:'0px 10px 0px 0px'}}>
