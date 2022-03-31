@@ -7,7 +7,7 @@ import Home from './pages';
 import { SuperContainer} from './pages/PagesElements';
 import Footer from './components/Footer';
 import Upload from './pages/upload';
-import { name } from 'file-loader';
+//import { name } from 'file-loader';
 
 function getCookie(key) {
   var b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
@@ -22,15 +22,16 @@ function getCookie(key) {
     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
   }).join(''));
 
-  //return JSON.parse(jsonPayload);
+  console.log("ee" + JSON.parse(jsonPayload))
+  return JSON.parse(jsonPayload);
 }
 
 function App() {
   return (
     
     <Router>
-      <Navbar/>
-      console.log{getCookie("auth")};
+      <Navbar data={getCookie("auth")}/>
+      {console.log(getCookie("auth"))}
 
         <SuperContainer>
           <Routes>
