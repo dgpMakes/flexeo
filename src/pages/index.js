@@ -6,15 +6,15 @@ import {BsFillShieldFill} from 'react-icons/bs';
 import {HiFire} from 'react-icons/hi';
 import {colors} from '../theme';
 import {FiUsers} from 'react-icons/fi';
-
+import { CardLImage } from './PagesElements';
 
 const Home = () => {
     return (
         <>
-                {/* HEADER
+               
                 <Front>
                     <FrontHoldImage>
-                        {/*<CardLImage src='https://images.pexels.com/photos/2272752/pexels-photo-2272752.jpeg'></CardLImage>
+                        <CardLImage src='https://images.pexels.com/photos/2272752/pexels-photo-2272752.jpeg'></CardLImage>
                         
                     </FrontHoldImage>
                     <CardLText>
@@ -33,7 +33,7 @@ const Home = () => {
                 <FrontMb>
                     <h4 style={{fontWeight: 500}}>Somos de edición limitada.</h4>
                     <h5 style={{color: colors.font}}>Tu portal de compraventa de zapatillas exclusivas</h5>
-                </FrontMb>*/}
+                </FrontMb>
                 
                  {/* Sneakers selection*/}
 
