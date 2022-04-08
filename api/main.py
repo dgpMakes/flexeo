@@ -92,6 +92,8 @@ class db_Product(Base):
     booked_user_id = Column(String)
     sold = Column(Boolean)
     deleted = Column(Boolean)
+    class Config:
+        orm_mode = True
 
 class db_Model(Base):
     __tablename__ = "model"
