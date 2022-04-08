@@ -15,7 +15,6 @@ import {FiUsers} from 'react-icons/fi';
 //secret-client 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
 
 function Menu(data) {
-  console.log(data)
   if (data == null) {
     return <LoginButton />;
   } else {

@@ -15,25 +15,31 @@ const ProductInformation = () => {
   const [count, setCount] = useState(Math.round(100 * Math.random())); //reemplazar por nº likes
   const [likedState, setLikedState] = useState(false);
   const [productInfo, setProductInfo] = useState(null);
-
+  const [mounted, setMounted] = useState(false);
 
   let { id } = useParams();
 
-  function pullData() {
-    return fetch('https://api.flexeo.es/v1/product/'+{id})
+
+  /*function pullData() {
+    return fetch('https://api.flexeo.es/v1/product/'+id)
       .then(data => data.json())
-  }
+  }*/
 
   useEffect(() => {
-    let mounted = true;
+    async function pullData() {
+      return await fetch('https://api.flexeo.es/v1/product/'+id)
+        .then(data => data.json())
+    }
+
+    if(mounted===false){
+      return;
+    }
     pullData()
       .then(items => {
-        if(mounted) {
           setProductInfo(items)
-        }
-      })
-    return () => mounted = false;
-  }, [])
+          setMounted(true)
+        })
+  },[id,mounted])
 
   function handleLike() {
     if (!likedState) {
@@ -59,9 +65,8 @@ const ProductInformation = () => {
         <FeatureSection>
           <ProductImg src={product}></ProductImg>
           <div>
-            <Title>Adidas Nike Edition {id}</Title>
-            <Description>Ya sabéis lo bien que quedan con cualquier cosa que te pongas. Estas zapas las compré hace una semana y ahora buscan nuevo dueño. Me las puse para sacar fotos.
-              Me envías un chat y quedamos :)</Description>
+            <Title>Adidas Nike Edition</Title>
+            <Description>{console.log(productInfo.description)}</Description>
             <DivFlex>
               <FeatureTitle>Estado:</FeatureTitle><FeatureValue>Nuevas</FeatureValue>
             </DivFlex>
