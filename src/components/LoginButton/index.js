@@ -6,7 +6,6 @@ import { IoLogoGoogle } from 'react-icons/io';
 import GoogleLogin from 'react-google-login';
 import Cookies from 'universal-cookie';
 
-
 const LoginButton = () => {
 
   const responseGoogle = (response) => {
@@ -27,8 +26,6 @@ const LoginButton = () => {
         }
       );
     }
-
-    window.location.reload(false);
   }
 
   return (

@@ -22,7 +22,7 @@ function Menu(data) {
     return (<><div style={{margin:'0px 10px 0px 0px'}}>
             <AiOutlineHome/>
             <h6>Inicio</h6>
-            <h6>{data.name}</h6>
+            
           </div>
           
           <div style={{margin:'0px 10px 0px 0px'}}>
@@ -34,8 +34,8 @@ function Menu(data) {
             <h6>Chats</h6>
           </div>
           <div style={{margin:'0px 10px 0px 0px'}}>
-            <CgProfile/>
-            <h6>Perfil</h6>
+            <img src={data.photo} alt="profile" style={{width:"30px", borderRadius:"20px"}}></img>
+            <h6>Mi Panel</h6>
           </div></>)
     
   }

@@ -7,6 +7,7 @@ import Home from './pages';
 import { SuperContainer} from './pages/PagesElements';
 import Footer from './components/Footer';
 import Upload from './pages/upload';
+import ProductInformation from './components/ProductInformation';
 //import { name } from 'file-loader';
 
 function getCookie(key) {
@@ -30,15 +31,16 @@ function App() {
     
     <Router>
       <Navbar data={getCookie("auth")}/>
-
         <SuperContainer>
           <Routes>
             <Route path="/" exact element={<Home/>}/>
             <Route path="/upload" exact element={<Upload/>}/>
+            <Route path="/product" exact element={<ProductInformation/>}/>
+
           </Routes>
         </SuperContainer>
         <Footer></Footer>
-      <Navbar/>
+      <NavbarBottom/>
     </Router>
       
   );
