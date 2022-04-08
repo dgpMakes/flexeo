@@ -3,6 +3,7 @@ import {Card, CardImage,Text,Title,Subsection,Subtitle,Price,LikeCount,LikeNumbe
 import {FaRegHeart, FaHeart} from 'react-icons/fa';
 import product from '../../images/product.jpg';
 import { colors } from '../../theme';
+import { Link } from 'react-router-dom';
 //import { useState } from 'react/cjs/react.production.min';
 
 const ProductCard = (props) => {
@@ -31,7 +32,9 @@ const ProductCard = (props) => {
   return (
     <>
       <Card>
+        <Link to={'/product/' + props.id}>
         <CardImage src={product} alt='product-photo'></CardImage>
+        </Link>
         <Text>
           <Subsection>        
             <Subtitle><Price>{props.price}€ </Price></Subtitle>
@@ -40,6 +43,7 @@ const ProductCard = (props) => {
           <Title>@{props.name}</Title>
         </Text>
       </Card>
+      
     </>
   );
 };

@@ -35,8 +35,8 @@ function App() {
           <Routes>
             <Route path="/" exact element={<Home/>}/>
             <Route path="/upload" exact element={<Upload/>}/>
-            <Route path="/product" exact element={<ProductInformation/>}/>
-
+            <Route path="/product/:id" exact element={<ProductInformation/>}/>
+            
           </Routes>
         </SuperContainer>
         <Footer></Footer>
