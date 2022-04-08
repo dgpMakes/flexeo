@@ -1,4 +1,5 @@
 from datetime import date, datetime
+from itertools import product
 from fastapi import FastAPI, Cookie
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -21,6 +22,7 @@ import json
 
 # Pydantic
 class Product(BaseModel):
+    product_id:str
     model_id: str
     user_id: str
     price: float
@@ -39,7 +41,8 @@ app = FastAPI()
 
 origins = [
     "http://localhost:3000",
-    "https://flexeo.es"
+    "https://flexeo.es",
+    "http://localhost.flexeo.es:3000"
 ]
 
 app.add_middleware(
@@ -55,7 +58,7 @@ engine = create_engine('postgresql://flexeo:somosflexeros@server1.flexeo.es:5432
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
 
-@app.get("/v1/recent-products", response_model=list[Product])
+@app.get("/v1/recent-products", response_model=list)
 def get_products(num:int = 10):
     session = Session()
     products = session.query(db_Product).order_by(db_Product.time.desc()).limit(num).all()
