@@ -19,14 +19,16 @@ const formikEnhancer = withFormik({
         condition: Yup.object()
             .required("Escoge un estado"),
         are_sent: Yup.boolean(),
-        negotiable:Yup.boolean()
+        negotiable: Yup.boolean()
     }),
     mapPropsToValues: props => ({
         modelName: '',
         price: '',
         size: '',
         condition: '',
-        are_sent: false
+        are_sent: false,
+        user: '727d16cf-e99e-46fc-8323-062fd421adb1',
+        image: ''
     }),
     handleSubmit: (values, { setSubmitting }) => {
         const payload = {
@@ -121,7 +123,7 @@ const MyForm = props => {
                             touched.condition && (
                                 <div style={{ color: 'red', marginTop: '.5rem' }}>{errors.condition}</div>
                             )}
-                        
+
                         <label htmlFor="Envío" style={{ display: 'block' }}>Envío</label>
                         <div style={{ display: 'flex' }}>
                             <Field type="checkbox" name="are_sent" />
@@ -142,12 +144,13 @@ const MyForm = props => {
                         >
                             Reset
                             </StyledButton>*/}
-
+                        <input type="file" required/>
                         <StyledButton type="submit" disabled={isSubmitting}>
                             Submit
                         </StyledButton>
 
                     </form>
+
                 </Container>
             </Background>
         </div>

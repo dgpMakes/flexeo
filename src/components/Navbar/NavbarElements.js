@@ -27,12 +27,14 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   
-  color: ${colors.sec};
+  color: ${colors.searchbar};
 
   &.active {
-    color: #15cdfc;
+    color: ${colors.prim};
   }
 `;
+
+
 
 export const LogoL = styled.img`
   @media screen and (max-width: 996px) {
@@ -154,3 +156,28 @@ export const Tag = styled.div`
     padding: 0px 10px;
 
 `;
+
+
+export const Minititle = styled.div`
+    font-size: 12px;
+`;
+
+export const RedirectButton = styled(Link)`
+  padding: 0 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: ${colors.i_searchbar};
+
+  &.active {
+    color: ${colors.prim};
+  }
+`;
+
+export const ProfilePhoto = styled.img`
+width:25px;
+border-radius:20px;
+border-color: aliceblue;
+outline-color: red;
+
+`

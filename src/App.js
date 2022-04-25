@@ -1,6 +1,5 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import NavbarUser from './components/NavbarUser';
 import NavbarBottom from './components/NavbarBottom';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './pages';
@@ -40,7 +39,7 @@ function App() {
           </Routes>
         </SuperContainer>
         <Footer></Footer>
-      <NavbarBottom/>
+      <NavbarBottom data={getCookie("auth")}/>
     </Router>
       
   );
