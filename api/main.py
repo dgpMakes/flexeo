@@ -16,7 +16,7 @@ from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Boolean, Da
 from sqlalchemy.dialects.postgresql import UUID
 
 from sqlalchemy.orm import relationship
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, Session
 from pydantic import BaseModel
 import datetime
 import uuid
@@ -112,11 +112,11 @@ app.add_middleware(
 
 
 engine = create_engine('postgresql://flexeo:somosflexeros@server1.flexeo.es:5432/flexeo')
-Session = sessionmaker(bind=engine)
+SessionMaker: Session = sessionmaker(bind=engine)
 Base = declarative_base()
 
 def get_db():
-    db = Session()
+    db = SessionMaker()
     try:
         yield db
     finally:
@@ -210,7 +210,7 @@ class db_Like(Base):
     class Config:
         orm_mode = True
 
-@app.post("/v1/upload-product", response_model=Product) #Front should warn when everything is valid
+@app.post("/v1/product", response_model=Product) #Front should warn when everything is valid
 def upload_product(product : UploadProduct, auth: str = Cookie(None)):
     user_id = verify_jwt(auth)
     product_to_insert = db_Product(user_id=user_id, product_id=uuid.uuid4(), deleted=False, **product.dict())
@@ -237,11 +237,18 @@ def get_models(query: str, db: Session = Depends(get_db), auth : str | None = Co
     return models
 
 
-@app.post("/v1/{product_id}/like")
+@app.post("/v1/product/{product_id}/like")
 def get_models(product_id: str, db: Session = Depends(get_db), auth : str | None = Cookie(None)):
     user_id = verify_jwt(auth)
     like = db_Like(like_id=str(uuid.uuid4()), user_id=user_id, product_id=product_id)
     db.add(like)
+    db.commit()
+
+@app.delete("/v1/product/{product_id}/like")
+def get_models(product_id: str, db: Session = Depends(get_db), auth : str | None = Cookie(None)):
+    user_id = verify_jwt(auth)
+    like = db.query(db_Like).filter(db_Like.product_id==product_id and db_Like.user_id==user_id).one()
+    db.delete(like)
     db.commit()
 
 class GoogleLoginPost(BaseModel):
