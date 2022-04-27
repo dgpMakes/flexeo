@@ -2,6 +2,7 @@ from datetime import datetime
 
 from fastapi import FastAPI, Cookie, Depends
 from fastapi.middleware.cors import CORSMiddleware
+from httplib2 import Http, HttpLib2Error
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -54,7 +55,7 @@ def get_products(num:int = 10, db: Session = Depends(get_db)):
 @app.post("/v1/product", response_model=Product) #Front should warn when everything is valid
 def upload_product(product : UploadProduct, auth: str = Cookie(None), db: Session = Depends(get_db)):
     user_id = verify_jwt(auth)
-    product_to_insert = db_Product(user_id=user_id, product_id=uuid.uuid4(), deleted=False, **product.dict())
+    product_to_insert = db_Product(user_id=user_id, product_id=uuid.uuid4(), deleted=False, time=datetime.datetime.now(), **product.dict())
     result = db.add(product_to_insert)
     db.commit()
     return result
@@ -86,6 +87,27 @@ def unlike_product(product_id: str, db: Session = Depends(get_db), auth : str | 
     user_id = verify_jwt(auth)
     like = db.query(db_Like).filter(db_Like.product_id==product_id and db_Like.user_id==user_id).one()
     db.delete(like)
+    db.commit()
+
+
+# Follow
+
+@app.post("/v1/follow/{follow_user_id}")
+def like_product(follow_user_id: str, db: Session = Depends(get_db), auth : str | None = Cookie(None)):
+    user_id = verify_jwt(auth)
+
+    # Check not self following
+    if user_id == follow_user_id:
+        raise HTTPException(500, "You cannot follow yorself")
+
+    f = db.query(db_Follow).filter_by(follower=user_id, followed=follow_user_id).one_or_none()
+    if f != None:
+        # Already following, return without error
+        return
+
+    # Create follow relation
+    follow = db_Follow(follow_id=str(uuid.uuid4()), follower=user_id, followed=follow_user_id)
+    db.add(follow)
     db.commit()
 
 

@@ -46,26 +46,26 @@ class Model(BaseModel):
         arbitrary_types_allowed = True
 
 class UploadProduct(BaseModel):
-    user_id: str
     model_id: str
     price: float
     size: float
     description: str
     condition: str
     are_sent: bool
-    time: datetime.date
-    booked_user_id: str | None = None
-    sold: bool = False
-
-    user: User
-    model: Model
 
     class Config:
         orm_mode = True
         arbitrary_types_allowed = True
 
 class Product(UploadProduct):
+    user_id: str
     product_id: str
+    time: datetime.date
+    booked_user_id: str | None = None
+    sold: bool = False
+
+    user: User
+    model: Model
 
 class CompleteRegistration(BaseModel):
     name: str
@@ -107,7 +107,7 @@ class db_Product(Base):
     description = Column(String)
     condition = Column(String)
     are_sent = Column(Boolean)
-    booked_user_id = Column(String)
+    booked_user_id = Column(String, ForeignKey("user.user_id"))
     sold = Column(Boolean)
     deleted = Column(Boolean)
 
@@ -140,6 +140,15 @@ class db_Like(Base):
     like_id = Column(String, primary_key=True)
     product_id = Column(String, ForeignKey("product.product_id"))
     user_id = Column(String, ForeignKey("user.user_id"))
+
+    class Config:
+        orm_mode = True
+
+class db_Follow(Base):
+    __tablename__ = "follow"
+    follow_id = Column(String, primary_key=True)
+    follower = Column(String, ForeignKey("user.user_id"))
+    followed = Column(String, ForeignKey("user.user_id"))
 
     class Config:
         orm_mode = True
