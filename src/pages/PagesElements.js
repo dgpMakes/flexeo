@@ -98,6 +98,13 @@ export const FrontMb = styled.div`
 `
 
 
+export const Line = styled.div`
+  
+  border-left: 2px solid ${colors.un_grey};
+  height: 500px;
+`
+
+
 
 
 

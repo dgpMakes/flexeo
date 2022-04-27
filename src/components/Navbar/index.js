@@ -29,9 +29,9 @@ function Menu(data) {
             <IoHomeOutline size={25}/>
             <Minititle>Inicio</Minititle>
           </RedirectButton>
-          <RedirectButton exact to="/gente">
+          <RedirectButton exact to="/social">
             <FiUsers size={25}/>
-            <Minititle>Gente</Minititle>
+            <Minititle>Social</Minititle>
           </RedirectButton>
           <RedirectButton exact to="/chats">
             <IoChatbubblesOutline size={25}/>

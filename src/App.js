@@ -8,7 +8,9 @@ import Footer from './components/Footer';
 import Upload from './pages/upload';
 import ProductInformation from './components/ProductInformation';
 //import { name } from 'file-loader';
-
+import Social from './pages/social';
+import Panel from './pages/panel';
+import Chats from './pages/chats';
 function getCookie(key) {
   var b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
   if(b == null){
@@ -35,6 +37,11 @@ function App() {
             <Route path="/" exact element={<Home/>}/>
             <Route path="/upload" exact element={<Upload/>}/>
             <Route path="/product/:id" exact element={<ProductInformation/>}/>
+            <Route path="/social" exact element={<Social/>}/>
+            <Route path="/chats" exact element={<Chats/>}/>
+            <Route path="/panel" exact element={<Panel/>}/>
+
+
             
           </Routes>
         </SuperContainer>

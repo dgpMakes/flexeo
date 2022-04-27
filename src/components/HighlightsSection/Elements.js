@@ -52,6 +52,9 @@ export const CardSection = styled.div`
 export const Title = styled.h4`
   color: ${colors.prim};
   font-weight: 600;
+  text-transform: 'uppercase';
+  font-style: 'italic';
+
 `
 
 export const SubTitle = styled.h4`

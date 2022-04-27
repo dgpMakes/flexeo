@@ -15,7 +15,6 @@ const Home = () => {
                 <Front>
                     <FrontHoldImage>
                         <CardLImage src='https://images.pexels.com/photos/2272752/pexels-photo-2272752.jpeg'></CardLImage>
-                        
                     </FrontHoldImage>
                     <CardLText>
                         <h1>Somos de edición limitada.</h1>
@@ -37,8 +36,8 @@ const Home = () => {
                 
                  {/* Sneakers selection*/}
 
-                <HighlightsSection icon={<HiFire size={28} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Lo más popular" description="Estas zapas están que lo arden." call="https://api.flexeo.es/v1/recent-models"></HighlightsSection>
-                <HighlightsSection icon={<FiUsers size={28} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Últimas novedades" description="De gente que sigues." call="https://api.flexeo.es/v1/recent-products"></HighlightsSection>    
+                <HighlightsSection icon={<HiFire size={28} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Lo más popular" description="Estas zapas están que lo arden." call="https://api.flexeo.es/v1/model"></HighlightsSection>
+                <HighlightsSection icon={<FiUsers size={28} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Últimas novedades" description="De gente que sigues." call="https://api.flexeo.es/v1/product?num=1"></HighlightsSection>    
                 </>
     );
 };
