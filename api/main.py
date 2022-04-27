@@ -1,3 +1,4 @@
+from codecs import backslashreplace_errors
 from datetime import date, datetime
 from itertools import product
 from signal import pause
@@ -5,6 +6,7 @@ from tabnanny import check
 from urllib.request import AbstractBasicAuthHandler
 from fastapi import FastAPI, Cookie, Depends
 from fastapi.middleware.cors import CORSMiddleware
+import sqlalchemy
 from starlette.exceptions import HTTPException
 
 import dateutil.parser
@@ -59,6 +61,7 @@ class Model(BaseModel):
     estimated_market_value: float | None = None
     image_url: str | None = None
 
+
     class Config:
         orm_mode = True
         arbitrary_types_allowed = True
@@ -84,6 +87,7 @@ class UploadProduct(BaseModel):
 
 class Product(UploadProduct):
     product_id: str
+    likes: int
 
 class CompleteRegistration(BaseModel):
     name: str
@@ -122,12 +126,18 @@ def get_db():
     finally:
         db.close()
 
-@app.get("/v1/recent-products", response_model=list)
+@app.get("/v1/product", response_model=list[Product])
 def get_products(num:int = 10, db: Session = Depends(get_db)):
     products = db.query(db_Product).order_by(db_Product.time.desc()).limit(num).all()
     return products
 
-
+@app.post("/v1/product", response_model=Product) #Front should warn when everything is valid
+def upload_product(product : UploadProduct, auth: str = Cookie(None), db: Session = Depends(get_db)):
+    user_id = verify_jwt(auth)
+    product_to_insert = db_Product(user_id=user_id, product_id=uuid.uuid4(), deleted=False, **product.dict())
+    result = db.add(product_to_insert)
+    db.commit()
+    return result
 
 @app.get("/v1/product/{product_id}", response_model=Product) #response_model te da el formato del return que prefieras
 def get_product_by_id(product_id : str, db: Session = Depends(get_db)):
@@ -179,6 +189,7 @@ class db_Product(Base):
 
     user = relationship("db_User", back_populates="products")
     model = relationship("db_Model")
+    likes = relationship("db_Like", back_populates="product")
 
     class Config:
         orm_mode = True
@@ -193,7 +204,7 @@ class db_Model(Base):
     colorway = Column(String)
     gender = Column(String)
     release_year = Column(Integer)
-    retail_date = Column(Date)
+    retail_date = Column(sqlalchemy.Date)
     retail_price = Column(Integer)
     estimated_market_value = Column(Integer)
     image_url = Column(String)
@@ -207,26 +218,17 @@ class db_Like(Base):
     product_id = Column(String, ForeignKey("product.product_id"))
     user_id = Column(String, ForeignKey("user.user_id"))
 
+    product = relationship("db_Product", back_populates="likes")
+
     class Config:
         orm_mode = True
 
-@app.post("/v1/product", response_model=Product) #Front should warn when everything is valid
-def upload_product(product : UploadProduct, auth: str = Cookie(None)):
-    user_id = verify_jwt(auth)
-    product_to_insert = db_Product(user_id=user_id, product_id=uuid.uuid4(), deleted=False, **product.dict())
-    
-    session = Session()
-    result = session.add(product_to_insert)
-    session.commit()
-    session.close()
-    return result
+
 
 @app.get("/v1/recent-models", response_model=list)
 def get_models(num : int = 10, auth : str | None = Cookie(None), db: Session = Depends(get_db)):
     print("auth cookie -> " + str(auth))
-    session = Session()
-    models = session.query(db_Model).order_by(db_Model.retail_date.desc()).limit(num).all()
-    session.close()
+    models = db.query(db_Model).order_by(db_Model.retail_date.desc()).limit(num).all()
     return models
 
 
