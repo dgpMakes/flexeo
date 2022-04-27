@@ -15,7 +15,7 @@ def google_login_user(token: str, db: Session) -> str:
     
     if user is None:
         # Create new user in database
-        newUser = db_User(user_id=str(uuid.uuid4()), email=data["email"], state="onboarding")
+        newUser = db_User(user_id=str(uuid.uuid4()), email=data["email"], state="onboarding", creation_date=datetime.datetime.now())
         db.add(newUser)
         db.commit()
         db.refresh(newUser)

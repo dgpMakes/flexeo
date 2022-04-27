@@ -16,9 +16,9 @@ class GoogleLoginResponse(BaseModel):
 class User(BaseModel):
     user_id: str
     email: str
-    name: str
-    surname: str
-    address: str
+    name: str | None
+    surname: str | None
+    address: str | None
     creation_date: datetime.date
     state: str
 
@@ -66,7 +66,6 @@ class UploadProduct(BaseModel):
 
 class Product(UploadProduct):
     product_id: str
-    likes: int
 
 class CompleteRegistration(BaseModel):
     name: str
@@ -114,7 +113,6 @@ class db_Product(Base):
 
     user = relationship("db_User", back_populates="products")
     model = relationship("db_Model")
-    likes = relationship("db_Like", back_populates="product")
 
     class Config:
         orm_mode = True
@@ -142,8 +140,6 @@ class db_Like(Base):
     like_id = Column(String, primary_key=True)
     product_id = Column(String, ForeignKey("product.product_id"))
     user_id = Column(String, ForeignKey("user.user_id"))
-
-    product = relationship("db_Product", back_populates="likes")
 
     class Config:
         orm_mode = True
