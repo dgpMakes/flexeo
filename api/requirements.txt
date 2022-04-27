@@ -5,4 +5,3 @@ fastapi
 google-auth
 requests
 pyjwt
-python-dateutil
