@@ -65,11 +65,11 @@ export default class HighlightsSection extends React.Component {
     //);
     if (this.props.call.includes("model")) {
       for (let i = 0; i < this.state.content.length; i++) {
-        cards.push(<ModelCard key={"model." + i} name={this.state.content[i].name} price={this.state.content[i].retail_price}></ModelCard>);
+        cards.push(<ModelCard key={"model." + i} id={this.state.content[i].model_id} name={this.state.content[i].name} price={this.state.content[i].retail_price}></ModelCard>);
       }
     } else if (this.props.call.includes("product")) {
       for (let i = 0; i < this.state.content.length; i++) {
-        cards.push(<ProductCard key={"product." + i} id={this.state.content[i].product_id} name={this.state.content[i].description} price={this.state.content[i].price}></ProductCard>);
+        cards.push(<ProductCard key={"product." + i} id={this.state.content[i].product_id} name={this.state.content[i].user.name} size={this.state.content[i].size} price={this.state.content[i].price}></ProductCard>);
       }
     }
 

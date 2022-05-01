@@ -167,22 +167,3 @@ export  const OptionSubtitle = styled.label`
     font-size: 12px;
   `;
 
-export const StyledButton = styled.button`
-  text-align:center;
-  padding: 8px 0px 0px 0px;
-  font-size: 16px;
-  font-weight: 400;
-  
-  height: 38px;
-  width: 100px;
-  color: ${colors.prim};
-  background-color: ${colors.smooth_prim};
-  border-style: none;
-  border-radius: 5px;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    background: ${colors.font};
-    color: ${colors.white};
-  }
-`

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Background, Container, Block, Title, ToFill, ToFillBig, Name,ToogleName, ToImage, Subtitle, VerticalDiv, VerticalText} from './Elements';
+import {Background, StyledButton,Container, Block, Title, ToFill, ToFillBig, Name,ToogleName, ToImage, Subtitle, VerticalDiv, VerticalText} from './Elements';
 import { colors } from '../../theme';
 import Toogle from '../Toogle';
 import ToSelect from '../ToSelect';

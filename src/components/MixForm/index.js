@@ -2,14 +2,12 @@ import React from 'react';
 import { withFormik, Field } from 'formik';
 import * as Yup from 'yup';
 import Select from 'react-select';
-import { Background, Container, Block, Title, ToFill, ToFillBig, Name, ToogleName, ToImage, Subtitle, VerticalDiv, VerticalText } from './Elements';
+import { Background, Container, Block, Title, ToFill, ToDescript, Name, ToogleName, ToImage, Subtitle, VerticalDiv, VerticalText } from './Elements';
 import { colors } from '../../theme';
 import { IoMdAddCircleOutline } from 'react-icons/io';
-import { StyledButton } from '../ProductForm/Elements';
-
 const formikEnhancer = withFormik({
     validationSchema: Yup.object().shape({
-        modelName: Yup.object()
+        model_id: Yup.object()
             .required("Escoge un modelo del catálogo"),
         price: Yup.number()
             .max(9999, "Tiene que estar por debajo de 10.000€")
@@ -18,21 +16,23 @@ const formikEnhancer = withFormik({
             .required("Escoge una talla"),
         condition: Yup.object()
             .required("Escoge un estado"),
+        description: Yup.string(),
         are_sent: Yup.boolean(),
         negotiable: Yup.boolean()
     }),
     mapPropsToValues: props => ({
-        modelName: '',
+        model_id: '',
         price: '',
         size: '',
         condition: '',
         are_sent: false,
-        user: '727d16cf-e99e-46fc-8323-062fd421adb1',
+        description: '',
+        user_id: '727d16cf-e99e-46fc-8323-062fd421adb1',
         image: ''
     }),
     handleSubmit: (values, { setSubmitting }) => {
         const payload = {
-            ...values, modelName: values.modelName.value, size: values.size.value, condition: values.condition.value
+            ...values, model_id: values.model_id.value, size: values.size.value, condition: values.condition.value
         };
         setTimeout(() => {
             alert(JSON.stringify(payload, null, 2));
@@ -73,20 +73,20 @@ const MyForm = props => {
 
                         <MySelect
                             label="Modelo"
-                            value={values.modelName}
+                            value={values.model_id}
                             onChange={setFieldValue}
                             onBlur={setFieldTouched}
-                            error={errors.modelName}
-                            touched={touched.modelName}
+                            error={errors.model_id}
+                            touched={touched.model_id}
                         />
-                        {errors.modelName &&
-                            touched.modelName && (
-                                <div style={{ color: 'red', marginTop: '.5rem' }}>{errors.modelName}</div>
+                        {errors.model_id &&
+                            touched.model_id && (
+                                <div style={{ color: 'red', marginTop: '.5rem' }}>{errors.model_id}</div>
                             )}
                         <label htmlFor="Precio" style={{ display: 'block' }}>
                             Precio (€)
                         </label>
-                        <ToFill
+                        <ToFill style={{width:"310px"}}
                             id="price"
                             placeholder="¿Cuánto pides?"
                             type="number"
@@ -124,15 +124,27 @@ const MyForm = props => {
                                 <div style={{ color: 'red', marginTop: '.5rem' }}>{errors.condition}</div>
                             )}
 
+                        <label htmlFor="Descripción" style={{ display: 'block' }}>
+                            Descripción
+                        </label>
+                        <ToDescript style={{width:"310px", margin:"0px 0px 10px 0px" }}
+                            id="description"
+                            placeholder="Aquí puedes contar un poco tu historia con estas zapas... "
+                            type="string"
+                            value={values.string}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                        />
+
                         <label htmlFor="Envío" style={{ display: 'block' }}>Envío</label>
-                        <div style={{ display: 'flex' }}>
-                            <Field type="checkbox" name="are_sent" />
+                        <div style={{ display: 'flex',margin:"0px 0px 10px 0px" }}>
+                            <Field type="checkbox" name="are_sent" style={{margin:"3px 7px 0px 0px"}}/>
                             <Name>Hago envíos</Name>
                         </div>
 
                         <label htmlFor="Negociar" style={{ display: 'block' }}>¿Negociable?</label>
-                        <div style={{ display: 'flex' }}>
-                            <Field type="checkbox" name="negotiable" />
+                        <div style={{ display: 'flex',margin:"0px 0px 10px 0px" }}>
+                            <Field type="checkbox" name="negotiable" style={{margin:"3px 7px 0px 0px"}}/>
                             <Name >Acepto ofertas</Name>
                         </div>
 
@@ -144,10 +156,10 @@ const MyForm = props => {
                         >
                             Reset
                             </StyledButton>*/}
-                        <input type="file" required/>
-                        <StyledButton type="submit" disabled={isSubmitting}>
-                            Submit
-                        </StyledButton>
+                        <input type="file" required />
+                        <button type="submit" disabled={isSubmitting}>
+                            Subir
+                        </button>
 
                     </form>
 
@@ -186,10 +198,9 @@ function optionList(listType) {
 
     if (listType.includes("Modelo")) {
         return [
-            { value: 'Nike Air One', label: 'Nike Air One' },
-            { value: 'Adidas Plus Run', label: 'Adidas Plus Run' },
-            { value: 'Asics Right Now Blue', label: 'Asics Right Now Blue' },
-            { value: 'Jordan Off White', label: 'Jordan Off White' }
+            { value: 'b21befbf-e651-411a-995a-484827b6eb23', label: 'Tarther Blast Wasabi Thunder Blue' },
+            { value: 'a3223f2d-362c-43e9-a581-d725ee39e632', label: 'Nike White Balance Extreme And Unlimited Super Edition' },
+            { value: '440e2d6b-8876-402b-96aa-32a921e626af', label: 'Adidas Smart Relief for Training' },
         ]
     }
 }
@@ -215,7 +226,7 @@ class MySelect extends React.Component {
         }
 
         if (this.props.label.includes("Modelo")) {
-            this.props.onChange('modelName', value);
+            this.props.onChange('model_id', value);
         }
     };
 
@@ -231,7 +242,7 @@ class MySelect extends React.Component {
         }
 
         if (this.props.label.includes("Modelo")) {
-            this.props.onBlur('modelName', true);
+            this.props.onBlur('model_id', true);
         }
     };
 

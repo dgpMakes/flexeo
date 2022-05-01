@@ -113,3 +113,6 @@ export const ToogleName = styled.h5`
 export const ToImage = styled.div`
 
 `
+export const StyledButton = styled.button`
+
+`

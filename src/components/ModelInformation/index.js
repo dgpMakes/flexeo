@@ -7,7 +7,7 @@ import { colors } from '../../theme';
 import { useParams } from 'react-router-dom';
 
 
-class ProductInformation extends React.Component {
+class ModelInformation extends React.Component {
   constructor(props) {
     super(props) 
     this.state = {
@@ -21,7 +21,7 @@ class ProductInformation extends React.Component {
   pullData() {
     const { id } = this.props.params;
 
-    fetch('https://api.flexeo.es/v1/product/'+id, {
+    fetch('https://api.flexeo.es/v1/model/'+id, {
       credentials: 'include'
     })
       .then((res) => res.json())
@@ -68,20 +68,19 @@ class ProductInformation extends React.Component {
           <ProductImg src={product}></ProductImg>
           <div>
             
-            <Title>{this.state.contentProduct.model.name}</Title>
-            <Description>{this.state.contentProduct.description}</Description>
+            <Title>{this.state.contentProduct.name}</Title>
             <DivFlex>
-              <FeatureTitle>Estado:</FeatureTitle><FeatureValue>{this.state.contentProduct.condition}</FeatureValue>
+              <FeatureTitle>Estado:</FeatureTitle><FeatureValue></FeatureValue>
             </DivFlex>
             <DivFlex>
-              <FeatureTitle>Talla:</FeatureTitle><FeatureValue>{this.state.contentProduct.size}</FeatureValue>   
+              <FeatureTitle>Talla:</FeatureTitle><FeatureValue></FeatureValue>   
             </DivFlex>
-            <FeatureValue>{this.state.contentProduct.model.gender}</FeatureValue>   
+            <FeatureValue></FeatureValue>   
             <DivFlex>
-              <FeatureTitle>Precio retail:</FeatureTitle><FeatureValue>{this.state.contentProduct.model.retail_price}$</FeatureValue>
+              <FeatureTitle>Precio retail:</FeatureTitle><FeatureValue></FeatureValue>
             </DivFlex>
             <DivFlex>
-              <FeatureTitle>Marca:</FeatureTitle><FeatureValue>{this.state.contentProduct.model.brand}</FeatureValue>
+              <FeatureTitle>Marca:</FeatureTitle><FeatureValue></FeatureValue>
             </DivFlex>
             <DivFlex>
               <ChatButton>Chat</ChatButton>
@@ -106,7 +105,7 @@ class ProductInformation extends React.Component {
 }
 
 export default (props) => (
-  <ProductInformation
+  <ModelInformation
       {...props}
       params={useParams()}
   />

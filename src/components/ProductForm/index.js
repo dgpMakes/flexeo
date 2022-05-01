@@ -127,7 +127,7 @@ const ProductForm = () => {
 
 
 
-                                <StyledButton type="submit">Submit</StyledButton>
+                                <button type="submit">Submit</button>
                             </Form>
                         </Formik>
                     </Container>

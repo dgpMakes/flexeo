@@ -37,7 +37,7 @@ const Home = () => {
                  {/* Sneakers selection*/}
 
                 <HighlightsSection icon={<HiFire size={28} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Lo más popular" description="Estas zapas están que lo arden." call="https://api.flexeo.es/v1/model"></HighlightsSection>
-                <HighlightsSection icon={<FiUsers size={28} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Últimas novedades" description="De gente que sigues." call="https://api.flexeo.es/v1/product?num=1"></HighlightsSection>    
+                <HighlightsSection icon={<FiUsers size={28} style={{color: colors.prim, margin:'0px 10px 0px 0px'}}/>} title="Últimas novedades" description="De gente que sigues." call="https://api.flexeo.es/v1/product?num=5"></HighlightsSection>    
                 </>
     );
 };

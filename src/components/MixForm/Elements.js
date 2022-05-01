@@ -65,6 +65,22 @@ export const ToFill = styled.input`
     }
 `
 
+export const ToDescript = styled.textarea`
+    box-shadow: inset 0px 0px 0px 1px ${colors.searchbar};
+    
+    padding: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    width: max(280px,30%);
+    border-radius: 5px;
+    border: none;
+    
+    :focus{
+        outline: none;
+        box-shadow: inset 0px 0px 0px 2px ${colors.prim};     /* oranges! yey */
+    }
+`
+
 export const ToFillBig = styled.textarea`
     box-shadow: inset 0px 0px 0px 1px ${colors.searchbar};
     height: 38px;
