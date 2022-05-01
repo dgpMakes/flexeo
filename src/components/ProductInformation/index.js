@@ -39,6 +39,8 @@ class ProductInformation extends React.Component {
     
   }
 
+  
+
   componentDidMount() {
     this.interval = this.pullData();
   }
@@ -58,28 +60,30 @@ class ProductInformation extends React.Component {
         </>)
     }
 
+
     return (
       <>
       <Card>
         <FeatureSection>
           <ProductImg src={product}></ProductImg>
           <div>
-            <Title>Adidas Nike Edition</Title>
+            
+            <Title>{this.state.contentProduct.model.name}</Title>
             <Description>{this.state.contentProduct.description}</Description>
             <DivFlex>
               <FeatureTitle>Estado:</FeatureTitle><FeatureValue>{this.state.contentProduct.condition}</FeatureValue>
             </DivFlex>
             <DivFlex>
-              <FeatureTitle>Talla:</FeatureTitle><FeatureValue>{this.state.contentProduct.size}</FeatureValue>
+              <FeatureTitle>Talla:</FeatureTitle><FeatureValue>{this.state.contentProduct.size}</FeatureValue>   
+            </DivFlex>
+            <FeatureValue>{this.state.contentProduct.model.gender}</FeatureValue>   
+            <DivFlex>
+              <FeatureTitle>Precio retail:</FeatureTitle><FeatureValue>{this.state.contentProduct.model.retail_price}$</FeatureValue>
             </DivFlex>
             <DivFlex>
-              <FeatureTitle>Precio retail:</FeatureTitle><FeatureValue>124$</FeatureValue>
+              <FeatureTitle>Marca:</FeatureTitle><FeatureValue>{this.state.contentProduct.model.brand}</FeatureValue>
             </DivFlex>
             <DivFlex>
-              <FeatureTitle>Marca:</FeatureTitle><FeatureValue>Adidas</FeatureValue>
-            </DivFlex>
-            <DivFlex>
-  
               <ChatButton>Chat</ChatButton>
             </DivFlex>
             <SubTitle></SubTitle>

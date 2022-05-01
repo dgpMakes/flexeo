@@ -129,6 +129,15 @@ export const Searchbar = styled.div`
   color: white;
   background: ${colors.searchbar};
   border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: inset 0px 0px 0px 2px ${colors.like_count_grey};
+  }
+
+  &:active {
+    box-shadow: inset 0px 0px 0px 2px ${colors.prim};
+  }
 
   @media screen and (max-width: 996px) {
     transition: all 0.5s ease-in-out;
@@ -154,6 +163,13 @@ export const Tagbar = styled.div`
 
 export const Tag = styled.div`
     padding: 0px 10px;
+    cursor: pointer;
+
+    &:hover {
+    transition: all 0.1s ease-in-out;
+    color: ${colors.prim};
+  }
+
 
 `;
 

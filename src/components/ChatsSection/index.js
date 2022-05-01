@@ -1,38 +1,37 @@
 import React from 'react';
-import { Container, LeftContainer, Line, SectionName, Grid } from './Elements';
-import UserCardShort from '../UserCardShort';
-import { FiUsers } from 'react-icons/fi';
-import { HiOutlineUserGroup } from 'react-icons/hi';
-import { FiCalendar } from 'react-icons/fi';
+import { UserImage, Container, LeftContainer, Line, SectionName, ActionButton} from './Elements';
 import { colors } from '../../theme';
 import ChatPreview from '../ChatPreview';
+import userphoto from '../../images/product.jpg';
+import { BsThreeDots } from 'react-icons/bs';
 const ChatsSection = () => {
 
     const cards = [];
-    //const cards = this.state.model.map((i) =>
-    //  <ModelCard name = {this.state.model[i].name} price = {this.state.model[i].retail_price}></ModelCard>
-    //);
     for (let i = 0; i < 4; i++) {
-        cards.push(<ChatPreview/>);
+        cards.push(<ChatPreview />);
     }
-
 
     return (
         <>
 
             <Container>
                 <LeftContainer>
-                    <SectionName style={{ textTransform: 'uppercase', fontStyle: 'italic', margin: "10px 0px" }}>Chats</SectionName>
+                    <SectionName style={{ textTransform: 'uppercase', fontStyle: 'italic', margin: "10px 0px 30px 3px" }}>Chats</SectionName>
                     {cards}
                 </LeftContainer>
                 <Line />
                 <div>
-                    <div>
-                    <h4 style={{ color: colors.prim, margin: "40px 0px 15px 19px", fontWeight: "400" }}>Tu chat con</h4>
-
+                    <div style={{ display: "flex", margin: "40px 0px 0px 30px", width: "400px" }}>
+                        <UserImage src={userphoto} alt='user-profile'></UserImage>
+                        <div style={{ margin: "18px 0px 15px 25px" }}>
+                            <h4 style={{ color: colors.prim, fontWeight: "500", textTransform: 'uppercase', fontStyle: 'italic', fontSize: "22px" }}>Eva Letal</h4>
+                            <p style={{ color: colors.like_count_grey }}>Conectado hace menos de un día</p>
+                        </div>
+                        <div style={{ display: "flex", justifyContent: "center"}}>
+                            <ActionButton>Ver perfil</ActionButton>
+                            <ActionButton style={{ color: colors.like_count_grey, margin: "0px 5px" }}><BsThreeDots size="24" /></ActionButton>
+                        </div>
                     </div>
-                    <h4 style={{ color: colors.prim, margin: "40px 0px 15px 19px", fontWeight: "500",textTransform: 'uppercase', fontStyle: 'italic', fontSize:"22px"}}>Eva Letal</h4>
-
                 </div>
             </Container>
         </>
