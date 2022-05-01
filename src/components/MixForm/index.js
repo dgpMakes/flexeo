@@ -28,15 +28,20 @@ const formikEnhancer = withFormik({
         are_sent: false,
         description: '',
         user_id: '727d16cf-e99e-46fc-8323-062fd421adb1',
-        image: ''
+        //image_url: ''
     }),
     handleSubmit: (values, { setSubmitting }) => {
         const payload = {
             ...values, model_id: values.model_id.value, size: values.size.value, condition: values.condition.value
         };
         setTimeout(() => {
+            let res =  fetch("https://api.flexeo.es/v1/product", {
+                method: "POST",
+                body: (JSON.stringify(payload, null, 2)),
+            });
             alert(JSON.stringify(payload, null, 2));
             setSubmitting(false);
+
         }, 1000);
     },
     displayName: 'MyForm',
@@ -86,7 +91,7 @@ const MyForm = props => {
                         <label htmlFor="Precio" style={{ display: 'block' }}>
                             Precio (€)
                         </label>
-                        <ToFill style={{width:"310px"}}
+                        <ToFill style={{ width: "310px" }}
                             id="price"
                             placeholder="¿Cuánto pides?"
                             type="number"
@@ -127,7 +132,7 @@ const MyForm = props => {
                         <label htmlFor="Descripción" style={{ display: 'block' }}>
                             Descripción
                         </label>
-                        <ToDescript style={{width:"310px", margin:"0px 0px 10px 0px" }}
+                        <ToDescript style={{ width: "310px", margin: "0px 0px 10px 0px" }}
                             id="description"
                             placeholder="Aquí puedes contar un poco tu historia con estas zapas... "
                             type="string"
@@ -137,14 +142,14 @@ const MyForm = props => {
                         />
 
                         <label htmlFor="Envío" style={{ display: 'block' }}>Envío</label>
-                        <div style={{ display: 'flex',margin:"0px 0px 10px 0px" }}>
-                            <Field type="checkbox" name="are_sent" style={{margin:"3px 7px 0px 0px"}}/>
+                        <div style={{ display: 'flex', margin: "0px 0px 10px 0px" }}>
+                            <Field type="checkbox" name="are_sent" style={{ margin: "3px 7px 0px 0px" }} />
                             <Name>Hago envíos</Name>
                         </div>
 
                         <label htmlFor="Negociar" style={{ display: 'block' }}>¿Negociable?</label>
-                        <div style={{ display: 'flex',margin:"0px 0px 10px 0px" }}>
-                            <Field type="checkbox" name="negotiable" style={{margin:"3px 7px 0px 0px"}}/>
+                        <div style={{ display: 'flex', margin: "0px 0px 10px 0px" }}>
+                            <Field type="checkbox" name="negotiable" style={{ margin: "3px 7px 0px 0px" }} />
                             <Name >Acepto ofertas</Name>
                         </div>
 
@@ -245,6 +250,7 @@ class MySelect extends React.Component {
             this.props.onBlur('model_id', true);
         }
     };
+
 
     render() {
         return (
