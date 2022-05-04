@@ -8,9 +8,10 @@ import Footer from './components/Footer';
 import Upload from './pages/upload';
 import ProductInformation from './components/ProductInformation';
 //import { name } from 'file-loader';
-import Social from './pages/social';
-import Panel from './pages/panel';
-import Chats from './pages/chats';
+import SocialSection from './components/SocialSection';
+import ChatsSection from './components/ChatsSection';
+import PanelSection from './components/PanelSection';
+
 import ModelInformation from './components/ModelInformation';
 function getCookie(key) {
   var b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
@@ -24,7 +25,6 @@ function getCookie(key) {
   var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
   }).join(''));
-
   return JSON.parse(jsonPayload);
 }
 
@@ -40,9 +40,9 @@ function App() {
             <Route path="/product/:id" exact element={<ProductInformation/>}/>
             <Route path="/model/:id" exact element={<ModelInformation/>}/>
 
-            <Route path="/social" exact element={<Social/>}/>
-            <Route path="/chats" exact element={<Chats/>}/>
-            <Route path="/panel" exact element={<Panel/>}/>
+            <Route path="/social" exact element={<SocialSection/>}/>
+            <Route path="/chats" exact element={<ChatsSection/>}/>
+            <Route path="/panel" exact element={<PanelSection/>}/>
 
 
             
