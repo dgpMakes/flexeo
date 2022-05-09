@@ -5,6 +5,8 @@ import Select from 'react-select';
 import { Background, Container, Block, Title, ToFill, ToDescript, Name, ToogleName, ToImage, Subtitle, VerticalDiv, VerticalText } from './Elements';
 import { colors } from '../../theme';
 import { IoMdAddCircleOutline } from 'react-icons/io';
+import { Buffer } from 'buffer';
+
 const formikEnhancer = withFormik({
     validationSchema: Yup.object().shape({
         model_id: Yup.object()
@@ -27,6 +29,7 @@ const formikEnhancer = withFormik({
         condition: '',
         are_sent: false,
         description: '',
+        image: '',
         user_id: '727d16cf-e99e-46fc-8323-062fd421adb1',
         //image_url: ''
     }),
@@ -34,8 +37,10 @@ const formikEnhancer = withFormik({
         const payload = {
             ...values, model_id: values.model_id.value, size: values.size.value, condition: values.condition.value
         };
+
+
         setTimeout(() => {
-            let res =  fetch("https://api.flexeo.es/v1/product", {
+            let res = fetch("https://api.flexeo.es/v1/product", {
                 method: "POST",
                 body: (JSON.stringify(payload, null, 2)),
             });
@@ -46,6 +51,8 @@ const formikEnhancer = withFormik({
     },
     displayName: 'MyForm',
 });
+
+
 
 const MyForm = props => {
     const {
@@ -61,6 +68,18 @@ const MyForm = props => {
         setFieldTouched,
         isSubmitting,
     } = props;
+
+    /*function handleFileChange (e){
+        const file = e.target.file[0];
+        const reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = () => {
+            this.name: ;
+        }
+
+    }*/
+
+
     return (
         <div style={{ display: 'flex' }}>
             <VerticalDiv>
@@ -141,6 +160,22 @@ const MyForm = props => {
                             onBlur={handleBlur}
                         />
 
+                        <input id="image"
+                            type="file"
+                            value={values.string}
+                            onChange={(event) => {
+                                let reader = new FileReader();
+                                reader.onload = function(a) {
+                                    let res = a.target.result;
+                                    setFieldValue("image", Buffer.from(res).toString("base64"));
+                                }
+                                reader.readAsArrayBuffer(event.target.files[0])
+                                
+                                
+                            }}
+                            onBlur={handleBlur} />
+
+
                         <label htmlFor="Envío" style={{ display: 'block' }}>Envío</label>
                         <div style={{ display: 'flex', margin: "0px 0px 10px 0px" }}>
                             <Field type="checkbox" name="are_sent" style={{ margin: "3px 7px 0px 0px" }} />
@@ -150,18 +185,10 @@ const MyForm = props => {
                         <label htmlFor="Negociar" style={{ display: 'block' }}>¿Negociable?</label>
                         <div style={{ display: 'flex', margin: "0px 0px 10px 0px" }}>
                             <Field type="checkbox" name="negotiable" style={{ margin: "3px 7px 0px 0px" }} />
-                            <Name >Acepto ofertas</Name>
+                            <Name>Acepto ofertas</Name>
                         </div>
 
-                        {/*<StyledButton
-                            label="button"
-                            className="outline"
-                            onClick={handleReset}
-                            disabled={!dirty || isSubmitting}
-                        >
-                            Reset
-                            </StyledButton>*/}
-                        <input type="file" required />
+
                         <button type="submit" disabled={isSubmitting}>
                             Subir
                         </button>
