@@ -38,7 +38,9 @@ const formikEnhancer = withFormik({
             ...values, model_id: values.model_id.value, size: values.size.value, condition: values.condition.value
         };
 
-
+        var cookieMatch = document.cookie.match(new RegExp('(^| )' + 'auth' + '=([^;]+)'));
+        if (cookieMatch) cookieMatch = cookieMatch[2];
+        console.log(cookieMatch + "3")
         setTimeout(() => {
             let res = fetch("https://api.flexeo.es/v1/product", {
                 method: "POST",

@@ -65,7 +65,7 @@ class ProductInformation extends React.Component {
       <>
       <Card>
         <FeatureSection>
-          <ProductImg src={product}></ProductImg>
+          <ProductImg src={"https://images.flexeo.es/file/flexeo/products/"+this.state.contentProduct.product_id}></ProductImg>
           <div>
             
             <Title>{this.state.contentProduct.model.name}</Title>

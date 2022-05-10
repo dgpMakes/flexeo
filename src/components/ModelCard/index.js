@@ -33,7 +33,7 @@ const ModelCard = (props) => {
     <>
       <Card>
         <Link to={'/model/' + props.id}>
-          <CardImage src={sneaker} alt='sneaker'></CardImage>
+          <CardImage src={"https://images.flexeo.es/models/"+props.id} alt='sneaker'></CardImage>
         </Link>
         <Text>
           <Title>{props.name}</Title>

@@ -34,11 +34,11 @@ const ProductCard = (props) => {
     <>
       <Card>
         <Link style={{ textDecoration: "none" }} to={'/product/' + props.id}>
-          <CardImage src={product} alt='product-photo'></CardImage>
+          <CardImage src={"https://images.flexeo.es/file/flexeo/products/"+props.id} alt='product-photo'></CardImage>
         </Link>
         <Text>
           <Subsection>
-            <Subtitle><Price>{props.price}€ </Price> <h5 style={{ color: colors.like_count_grey }}><CgExpand size="20" />{props.size}</h5></Subtitle>
+            <Subtitle><Price>{props.price}€ </Price> <h5 style={{ color: colors.like_count_grey, margin: "0px 0px 0px 10px" }}>{props.size}</h5></Subtitle>
             {showIcon()}
           </Subsection>
           <Title>@{props.name}</Title>

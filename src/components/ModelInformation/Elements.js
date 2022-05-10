@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../../theme';
+import {Link } from 'react-router-dom';
 
 export const Card = styled.div`
   box-shadow: inset 0px 0px 0px 1px ${colors.un_grey};
@@ -64,7 +65,7 @@ export const LikeButton = styled.button`
 `;
 
 export const ChatButton = styled.button`
-text-align:center;
+  text-align:center;
   font-size: 16px;
   font-weight: 400;
   
@@ -94,5 +95,14 @@ export const UserCard = styled.div`
 `;
 
 export const UserButtons = styled.div`
+
+`;
+
+export const BreadCrumbs = styled(Link)`
+/* unvisited link */
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 300;
+  color: ${colors.prim};
 
 `;

@@ -6,6 +6,7 @@ import { RedirectButton, Minititle,ProfilePhoto } from '../Navbar/NavbarElements
 import {IoHomeOutline} from 'react-icons/io5';
 import {FiUsers} from 'react-icons/fi';
 import {IoChatbubblesOutline} from 'react-icons/io5'
+import {CgProfile} from 'react-icons/cg'
 
 function Menu(data) {
   if (data == null) {
@@ -35,7 +36,8 @@ function Menu(data) {
             <Minititle>Chats</Minititle>
           </RedirectButton>
           <RedirectButton exact to="/panel">
-            <ProfilePhoto src={data.photo} alt="profile" style={{width:"25px", borderRadius:"20px"}}></ProfilePhoto>
+            {/*<ProfilePhoto src={data.photo} alt="profile" style={{width:"25px", borderRadius:"20px"}}></ProfilePhoto>*/}
+            <CgProfile size={25}/>
             <Minititle>Panel</Minititle>
           </RedirectButton>
 

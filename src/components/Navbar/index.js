@@ -38,7 +38,8 @@ function Menu(data) {
             <Minititle>Chats</Minititle>
           </RedirectButton>
           <RedirectButton exact to="/panel">
-            <ProfilePhoto src={data.photo} alt="profile" style={{width:"25px", borderRadius:"20px"}}></ProfilePhoto>
+            {/*<ProfilePhoto src={data.photo} alt="profile" style={{width:"25px", borderRadius:"20px"}}></ProfilePhoto>*/}
+            <CgProfile size={25}/>
             <Minititle>Panel</Minititle>
           </RedirectButton>
           <NavBtnLink to="/upload"><IoMdAddCircleOutline size={20} style={{ margin: "0px 3px 0px 0px", verticalAlign: 'middle' }} />Subir</NavBtnLink>

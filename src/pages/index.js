@@ -20,10 +20,10 @@ const Home = () => {
                         <h1>Somos de edición limitada.</h1>
                         <h4>Tu portal de compraventa de zapatillas exclusivas</h4>
                         <br/>
-                        <IconSet>
-                            <h4><FaSearch size={25} style={{color: colors.prim}}/><br/>Compara modelos y precios</h4>
-                            <h4><FaHandshake size={25} style={{color: colors.prim}}/><br/>Negocia con otros usuarios</h4>
-                            <h4><BsFillShieldFill size={25} style={{color: colors.prim}}/><br/>Protegido de las zapas falsas</h4>
+                        <IconSet style={{margin: '5px'}}>
+                            <h4 style={{margin:'5px 5px 5px 0px'}}><FaSearch size={25} style={{color: colors.prim}}/><br/>Compara modelos y precios</h4>
+                            <h4 style={{margin:'5px'}}><FaHandshake size={25} style={{color: colors.prim}}/><br/>Negocia con otros usuarios</h4>
+                            <h4 style={{margin:'5px'}}><BsFillShieldFill size={25} style={{color: colors.prim}}/><br/>Protegido de las zapas falsas</h4>
                         </IconSet>
                         <br/>
                         <FrontButton>Vender ya</FrontButton>

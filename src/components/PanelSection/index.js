@@ -13,7 +13,7 @@ const PanelSection = () => {
         <>
 
             <Container>
-                <LeftContainer>
+                {/*<LeftContainer>
                     <SectionName style={{ textTransform: 'uppercase', fontStyle: 'italic', margin: "10px 0px 30px 3px" }}>Panel</SectionName>
                     
                 </LeftContainer>
@@ -31,8 +31,8 @@ const PanelSection = () => {
                         </div>
                     </div>
                     <img src={chat} style={{width:"550px"}}></img>
-                </div>
-            </Container>
+                </div>*/}
+    </Container>
         </>
     );
 };
