@@ -1,12 +1,12 @@
 import React from 'react'
-import { Card, DivFlex, ProductImg, Title, Description, FeatureSection, FeatureTitle, FeatureValue, LikeButton, ChatButton, SubTitle, UserCard, UserButtons, UserCardSection } from './Elements';
+import { Card, PriceTag, DivFlex, ProductImg, Title, Description, FeatureSection, FeatureTitle, FeatureValue, LikeButton, ChatButton, SubTitle, UserCard, UserButtons, UserCardSection } from './Elements';
 import product from '../../images/product.jpg';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { LikeNumber } from '../ModelCard/Elements';
 import { colors } from '../../theme';
 import { useParams } from 'react-router-dom';
-
-
+import { BreadCrumbs } from '../ModelInformation/Elements';
+import {AiOutlineQuestionCircle} from 'react-icons/ai'
 class ProductInformation extends React.Component {
   constructor(props) {
     super(props) 
@@ -49,7 +49,14 @@ class ProductInformation extends React.Component {
     clearInterval(this.interval);
   }
 
-  
+  translateGender(gender) {
+    switch (gender) {
+      case 'women':
+        return 'Mujer';
+      case 'men':
+        return 'Hombre';
+    }
+  }
 
   render() {
     const { DataisLoaded } = this.state;
@@ -66,24 +73,21 @@ class ProductInformation extends React.Component {
       <Card>
         <FeatureSection>
           <ProductImg src={"https://images.flexeo.es/file/flexeo/products/"+this.state.contentProduct.product_id}></ProductImg>
-          <div>
-            
+          <div style={{margin:"40px 0px 0px 0px"}}>
+            <BreadCrumbs to={'/'} >Inicio / Producto / {this.state.contentProduct.user.name} / {this.state.contentProduct.model.name}</BreadCrumbs>
+            <PriceTag>{this.state.contentProduct.price}€</PriceTag>
             <Title>{this.state.contentProduct.model.name}</Title>
             <Description>{this.state.contentProduct.description}</Description>
+            <div style={{color: colors.like_count_grey}}>
             <DivFlex>
-              <FeatureTitle>Estado:</FeatureTitle><FeatureValue>{this.state.contentProduct.condition}</FeatureValue>
+              <FeatureTitle>{this.translateGender(this.state.contentProduct.model.gender)} · {this.state.contentProduct.condition} <AiOutlineQuestionCircle style={{ verticalAlign:"middle"}}/></FeatureTitle>
             </DivFlex>
+            <FeatureTitle></FeatureTitle>
             <DivFlex>
-              <FeatureTitle>Talla:</FeatureTitle><FeatureValue>{this.state.contentProduct.size}</FeatureValue>   
+              <FeatureTitle>Talla {this.state.contentProduct.size} · {this.state.contentProduct.model.brand} · {this.state.contentProduct.model.retail_price}$ en retail</FeatureTitle>
             </DivFlex>
-            <FeatureValue>{this.state.contentProduct.model.gender}</FeatureValue>   
-            <DivFlex>
-              <FeatureTitle>Precio retail:</FeatureTitle><FeatureValue>{this.state.contentProduct.model.retail_price}$</FeatureValue>
-            </DivFlex>
-            <DivFlex>
-              <FeatureTitle>Marca:</FeatureTitle><FeatureValue>{this.state.contentProduct.model.brand}</FeatureValue>
-            </DivFlex>
-            <DivFlex>
+            </div>
+            <DivFlex style={{margin:"10px 0px 0px 0px"}}>
               <ChatButton>Chat</ChatButton>
             </DivFlex>
             <SubTitle></SubTitle>

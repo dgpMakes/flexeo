@@ -38,7 +38,7 @@ const ProductCard = (props) => {
         </Link>
         <Text>
           <Subsection>
-            <Subtitle><Price>{props.price}€ </Price> <h5 style={{ color: colors.like_count_grey, margin: "0px 0px 0px 10px" }}>{props.size}</h5></Subtitle>
+            <Subtitle><Price>{props.price}€ </Price> <h5 style={{ color: colors.like_count_grey, margin: "0px 0px 0px 10px" }}><CgExpand size="20" style={{verticalAlign:"text-top"}}/>{props.size}</h5></Subtitle>
             {showIcon()}
           </Subsection>
           <Title>@{props.name}</Title>

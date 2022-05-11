@@ -13,7 +13,7 @@ export const CardImage = styled.img`
   display: flex;
   align-items: center;
   text-decoration: none;
-  transform: scaleX(-1);
+  //transform: scaleX(-1);
 
   width: 190px; 
   height: 100px; 

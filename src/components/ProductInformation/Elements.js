@@ -22,13 +22,15 @@ export const ProductImg = styled.img`
   object-position: 0% 100%;
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h4`
+font-weight: 500;
+font-style: italic;
   margin:0px 0px 10px 0px;
 `;
 
 export const Description = styled.h5`
-  width:300px;
-  margin:0px 0px 20px 0px;
+  width:350px;
+  margin:0px 0px 10px 0px;
 
 `;
 
@@ -39,6 +41,7 @@ display: flex;
 `;
 
 export const FeatureTitle = styled.h5`
+  font-size: 14px;
 `;
 
 export const FeatureValue = styled.h5`
@@ -95,4 +98,10 @@ export const UserCard = styled.div`
 
 export const UserButtons = styled.div`
 
+`;
+
+export const PriceTag = styled.h4`
+  color: ${colors.prim};
+  font-weight: 500;
+  margin: 10px 0px 0px 0px;
 `;

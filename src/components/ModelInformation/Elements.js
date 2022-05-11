@@ -17,9 +17,9 @@ export const ProductImg = styled.img`
   margin:0px 50px 0px 0px;
   text-decoration: none;
   border-radius: 10px;
-  width: 330px; 
-  height: 330px; 
-  object-fit: cover; 
+  width: 320px; 
+  height: 230px; 
+  //object-fit: cover; 
   object-position: 0% 100%;
 `;
 
