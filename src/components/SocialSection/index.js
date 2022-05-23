@@ -5,15 +5,21 @@ import {FiUsers} from 'react-icons/fi';
 import {HiOutlineUserGroup} from 'react-icons/hi';
 import {FiCalendar} from 'react-icons/fi';
 import { colors } from '../../theme';
+
 const SocialSection = () => {
 
     const cards = [];
     //const cards = this.state.model.map((i) =>
     //  <ModelCard name = {this.state.model[i].name} price = {this.state.model[i].retail_price}></ModelCard>
     //);
-    for (let i = 0; i < 7; i++) {
-        cards.push(<UserCardShort key={"usercard." + i} name="Eva Letal" username="@E_Valetal"></UserCardShort>);
-    }
+        cards.push(<UserCardShort key={"usercard." + 0}  num={0} name="Marta Campos" username="@Marta_par4"></UserCardShort>);
+        cards.push(<UserCardShort key={"usercard." + 1}  num={1} name="Jaime Brezo" username="@Suprja"></UserCardShort>);
+        cards.push(<UserCardShort key={"usercard." + 2}  num={2} name="Luis Grande" username="@Luis98"></UserCardShort>);
+        cards.push(<UserCardShort key={"usercard." + 3}  num={3} name="Álex Ruiz" username="@Alexio12"></UserCardShort>);
+        cards.push(<UserCardShort key={"usercard." + 4}  num={4} name="Sara Mar" username="@Sr_Mar"></UserCardShort>);
+        cards.push(<UserCardShort key={"usercard." + 5}  num={5} name="Sergio Manzano" username="@Sergei99"></UserCardShort>);
+        cards.push(<UserCardShort key={"usercard." + 6}  num={6} name="Patri Serrano" username="@PatriCIA"></UserCardShort>);
+
 
 
     return (

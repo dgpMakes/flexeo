@@ -1,0 +1,30 @@
+const numArray = [1, 1, 3, 1, 4, 3, 0, 16];
+
+const getOnlySingleOccurrencies = (inputArray) => {
+    //TODO
+    // should log 4,0,16
+
+    const numMap = new Map();
+
+    inputArray.forEach(e => {
+
+        let count = numMap.get(e);
+        if (count === undefined) {
+            numMap.set(e, 1);
+        } else {
+            numMap.set(e, count + 1);
+        }
+    })
+
+    const toReturn = [];
+
+    numMap.forEach((value, key) => {
+        if (value === 1) {
+            toReturn.push(key);
+        }
+    })
+
+    console.log(toReturn);
+}
+
+getOnlySingleOccurrencies(numArray);

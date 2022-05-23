@@ -59,11 +59,35 @@ export const ActionButton = styled.button`
   background: ${colors.un_grey};
   text-decoration: none;
   transition: all 0.2s ease-in-out;
+  &:hover {
+    background: ${colors.font};
+    color: ${colors.white};
+  }
+`;
+
+export const Option = styled.button`
+  width: 400px;
+  height: 30px;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: ${colors.prim};
+  background: ${colors.un_grey};
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  text-align:left;
+  padding: 0px 0px 0px 30px;
+  margin: 2px;
 
   &:hover {
     background: ${colors.font};
     color: ${colors.white};
   }
+`;
+
+export const OptionText = styled.h5`
+    
 `;
 
 
