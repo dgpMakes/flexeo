@@ -39,7 +39,7 @@ export const HlSectionButtonRight = styled.div`
 
 export const CardSection = styled.div`
   display:grid;
-  gap: 0.6rem;
+  gap: 2rem;
   grid-auto-flow:dense;
   grid-auto-rows:14rem;
   grid-template-columns: repeat(auto-fill,minmax(10rem, 2fr));

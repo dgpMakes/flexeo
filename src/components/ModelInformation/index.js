@@ -7,6 +7,8 @@ import { colors } from '../../theme';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+import products from '../../images/filling_products.png';
+
 
 class ModelInformation extends React.Component {
   constructor(props) {
@@ -85,20 +87,14 @@ class ModelInformation extends React.Component {
                   <h6 style={{margin:"8px 0px 0px 5px", fontWeight:"400"}}>en retail </h6>
                 </DivFlex>
                 <FeatureTitle style={{margin:"8px 0px 0px 0px"}}>{this.state.contentProduct.brand} · {this.translateGender(this.state.contentProduct.gender)}</FeatureTitle>
-                <FeatureTitle>A la venta desde {this.state.contentProduct.retail_date} </FeatureTitle>
+                <FeatureTitle>A la venta desde el {this.state.contentProduct.retail_date} </FeatureTitle>
               </div>
 
-              <ChatButton style={{margin:"15px 0px 0px 0px"}}>Chat</ChatButton>
-              <UserCardSection>
-                <UserCard>
-
-                </UserCard>
-                <UserButtons>
-
-                </UserButtons>
-              </UserCardSection>
+              
             </div>
+            
           </FeatureSection>
+          <img style={{margin:"0px 0px 0px 100px", width:"670px"}}src={products}></img>
         </Card>
       </>)
 

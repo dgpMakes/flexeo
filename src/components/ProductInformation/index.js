@@ -7,6 +7,9 @@ import { colors } from '../../theme';
 import { useParams } from 'react-router-dom';
 import { BreadCrumbs } from '../ModelInformation/Elements';
 import {AiOutlineQuestionCircle} from 'react-icons/ai'
+
+import user from '../../images/filling_user.png';
+
 class ProductInformation extends React.Component {
   constructor(props) {
     super(props) 
@@ -90,17 +93,9 @@ class ProductInformation extends React.Component {
             <DivFlex style={{margin:"10px 0px 0px 0px"}}>
               <ChatButton>Chat</ChatButton>
             </DivFlex>
-            <SubTitle></SubTitle>
-            <UserCardSection>
-              <UserCard>
-
-              </UserCard>
-              <UserButtons>
-
-              </UserButtons>
-            </UserCardSection>
           </div>
         </FeatureSection>
+        <img style={{margin:"0px 0px 30px 100px", width:"700px"}}src={user}></img>
 
 
       </Card>
