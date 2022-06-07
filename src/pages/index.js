@@ -8,13 +8,14 @@ import {colors} from '../theme';
 import {FiUsers} from 'react-icons/fi';
 import { CardLImage } from './PagesElements';
 
+import sneakers from '../images/home_sneakers.jpeg';
 const Home = () => {
     return (
         <>
                
                 <Front>
                     <FrontHoldImage>
-                        <CardLImage src='https://images.pexels.com/photos/2272752/pexels-photo-2272752.jpeg'></CardLImage>
+                        <CardLImage src={sneakers} alt='sneakers'></CardLImage>
                     </FrontHoldImage>
                     <CardLText>
                         <h1>Somos de edición limitada.</h1>
