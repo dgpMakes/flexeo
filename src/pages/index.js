@@ -14,9 +14,9 @@ const Home = () => {
         <>
                
                 <Front>
-                    <FrontHoldImage>
+                    {/*<FrontHoldImage>
                         <CardLImage src={sneakers} alt='sneakers'></CardLImage>
-                    </FrontHoldImage>
+                    </FrontHoldImage>*/}
                     <CardLText>
                         <h1>Somos de edición limitada.</h1>
                         <h4>Tu portal de compraventa de zapatillas exclusivas</h4>

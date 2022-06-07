@@ -16,20 +16,20 @@ export const Front = styled.div`
   display: none;
 
   @media screen and (min-width: 997px) {
-    margin: 40px 0px 0px 0px;
+    margin: 40px 0px 0px 190px;
     display: flex;
     width:100%;
-    height:380px;
+    height:280px;
     overflow:hidden;
     position: relative;
   }  
 `;
 
 export const CardLText = styled.div`
-  margin: 62px 0px 0px 5px;
+  margin: 2px 0px 0px 5px;
   width: 61%;
   height: 240px;
-  padding: 0px 0px 0px 40px;
+  padding: 20px 0px 20px 50px;
   position: absolute;
   z-index: 2px;
   box-shadow: 0 1px 3px ${colors.shadow};
@@ -38,8 +38,6 @@ export const CardLText = styled.div`
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  
-
   display:"block";
 `;
 
