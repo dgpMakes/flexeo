@@ -57,8 +57,8 @@ const Navbar = (props) => {
     <>
       <Nav>
         <NavLink to="/">
-          <LogoL src={Logo_long} alt='logo' />
-          <LogoS src={Logo_short} alt='logo' />
+          <LogoL src={Logo_long} width="140" height="140" alt='logo' />
+          <LogoS src={Logo_short} height="40" width="40" alt='logo' />
         </NavLink>
         <Searchbar>
           <FaSearch size={20} style={{ color: colors.i_searchbar, margin: "0px 0px 0px 15px", verticalAlign: 'middle' }} /><Input type="text" placeholder="Buscar zapatillas" />
