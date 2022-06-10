@@ -165,6 +165,7 @@ const MyForm = props => {
                         <input id="image"
                             type="file"
                             value={values.string}
+                            style={{margin:"0px 0px 15px 0px"}}
                             onChange={(event) => {
                                 let reader = new FileReader();
                                 reader.onload = function(a) {
@@ -191,10 +192,11 @@ const MyForm = props => {
                         </div>
 
 
-                        <button type="submit" disabled={isSubmitting}>
+                        <button type="submit" disabled={isSubmitting} style={{textAlign:"center", 
+                        padding:"3px", fontSize:"16px", fontWeight:500, height:"38px", width:"100px",color:colors.prim, backgroundColor:colors.smooth_prim
+                        ,borderStyle:"none", borderRadius:"5px"}}>
                             Subir
                         </button>
-
                     </form>
 
                 </Container>
