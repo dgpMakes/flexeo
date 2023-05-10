@@ -1,0 +1,3 @@
+3ff1d01a-ef82-11ed-a05b-0242ac120003,b21befbf-e651-411a-995a-484827b6eb23,eb91d804-ef80-11ed-a05b-0242ac120003,200,38,Looking for someone that will take care of these awesome sneakers! These were bought recently.,Nuevo,false,2023-03-11 00:31:57.000000,,false,false
+12f1d01a-ef82-11ed-a05b-0242ac120003,a3223f2d-362c-43e9-a581-d725ee39e632,319830ea-b9f7-476d-a967-8537942abc77,150,42,"Hey there! Got these sneakers yesterday, if interested send me a message!",Nuevo con etiquetas,false,2023-02-17 00:37:56.000000,,false,false
+421befbf-e651-411a-995a-484827b6eb23,b21befbf-e651-411a-995a-484827b6eb23,5a8b2b9c-8d16-4290-8d65-17811135f4b4,230,43,I joined the community this week and this is my first pair of sneakers on sale :),Nuevo,true,2022-09-11 00:39:35.000000,,false,false
