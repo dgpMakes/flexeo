@@ -5,3 +5,4 @@ fastapi
 google-auth
 requests
 pyjwt
+httplib2
