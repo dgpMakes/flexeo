@@ -75,7 +75,7 @@ class ModelInformation extends React.Component {
       <>
         <Card>
           <FeatureSection>
-            <ProductImg src={"https://images.flexeo.dgpmakes.com/file/flexeo/models/"+this.state.contentProduct.model_id}></ProductImg>
+            <ProductImg src={"https://flexeo-images.dgpmakes.com/file/flexeo/models/"+this.state.contentProduct.model_id}></ProductImg>
             <div style={{margin:"80px 0px 0px 0px"}}>
 
               <BreadCrumbs to={'/'} >Inicio / Modelo / {this.state.contentProduct.name}</BreadCrumbs>

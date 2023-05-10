@@ -75,7 +75,7 @@ class ProductInformation extends React.Component {
       <>
       <Card>
         <FeatureSection>
-          <ProductImg src={"https://images.flexeo.dgpmakes.com/file/flexeo/products/"+this.state.contentProduct.product_id}></ProductImg>
+          <ProductImg src={"https://flexeo-images.dgpmakes.com/file/flexeo/products/"+this.state.contentProduct.product_id}></ProductImg>
           <div style={{margin:"40px 0px 0px 0px"}}>
             <BreadCrumbs to={'/'} >Inicio / Producto / {this.state.contentProduct.user.name} / {this.state.contentProduct.model.name}</BreadCrumbs>
             <PriceTag>{this.state.contentProduct.price}€</PriceTag>

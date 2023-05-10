@@ -34,7 +34,7 @@ const ProductCard = (props) => {
     <>
       <Card>
         <Link style={{ textDecoration: "none" }} to={'/product/' + props.id}>
-          <CardImage src={"https://images.flexeo.dgpmakes.com/file/flexeo/products/"+props.id} alt='product-photo'></CardImage>
+          <CardImage src={"https://flexeo-images.dgpmakes.com/file/flexeo/products/"+props.id} alt='product-photo'></CardImage>
         </Link>
         <Text>
           <Subsection>
