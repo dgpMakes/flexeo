@@ -18,7 +18,7 @@ const LoginButton = () => {
         body: JSON.stringify({ id_token: response.tokenId })
       };
   
-      fetch('https://api.flexeo.dgpmakes.com/v1/google-login', requestOptions)
+      fetch('https://flexeo-api.dgpmakes.com/v1/google-login', requestOptions)
         .then(response => response.json())
         .then(data => {
           const cookies = new Cookies();

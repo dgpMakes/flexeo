@@ -24,7 +24,7 @@ class ModelInformation extends React.Component {
   pullData() {
     const { id } = this.props.params;
 
-    fetch('https://api.flexeo.dgpmakes.com/v1/model/' + id, {
+    fetch('https://flexeo-api.dgpmakes.com/v1/model/' + id, {
       credentials: 'include'
     })
       .then((res) => res.json())

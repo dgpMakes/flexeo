@@ -22,7 +22,7 @@ origins = [
     "http://localhost:3000",
     "https://flexeo.dgpmakes.com",
     "http://localhost.flexeo.dgpmakes.com:3000",
-    "http://api.flexeo.dgpmakes.com"
+    "http://flexeo-api.dgpmakes.com"
 ]
 
 app.add_middleware(

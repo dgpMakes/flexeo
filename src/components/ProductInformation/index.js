@@ -24,7 +24,7 @@ class ProductInformation extends React.Component {
   pullData() {
     const { id } = this.props.params;
 
-    fetch('https://api.flexeo.dgpmakes.com/v1/product/'+id, {
+    fetch('https://flexeo-api.dgpmakes.com/v1/product/'+id, {
       credentials: 'include'
     })
       .then((res) => res.json())
