@@ -38,7 +38,7 @@ export default class HighlightsSection extends React.Component {
   }
   // Where we're fetching data from
   //async componentDidMount(){
-  // const url = 'http://server1.flexeo.es:8000/v1/recent-products';
+  // const url = 'http://server1.flexeo.dgpmakes.com:8000/v1/recent-products';
   // const response = await fetch(url);
   //const data = await response.json();
   //console.log("El log da " + data[0].description);

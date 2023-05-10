@@ -18,11 +18,11 @@ const LoginButton = () => {
         body: JSON.stringify({ id_token: response.tokenId })
       };
   
-      fetch('https://api.flexeo.es/v1/google-login', requestOptions)
+      fetch('https://api.flexeo.dgpmakes.com/v1/google-login', requestOptions)
         .then(response => response.json())
         .then(data => {
           const cookies = new Cookies();
-          cookies.set('auth', data.jwt, { path: '/', domain: '.flexeo.es', sameSite: 'lax' });
+          cookies.set('auth', data.jwt, { path: '/', domain: '.flexeo.dgpmakes.com', sameSite: 'lax' });
         }
       );
     }

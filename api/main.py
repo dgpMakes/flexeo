@@ -20,9 +20,9 @@ app = FastAPI()
 
 origins = [
     "http://localhost:3000",
-    "https://flexeo.es",
-    "http://localhost.flexeo.es:3000",
-    "http://api.flexeo.es"
+    "https://flexeo.dgpmakes.com",
+    "http://localhost.flexeo.dgpmakes.com:3000",
+    "http://api.flexeo.dgpmakes.com"
 ]
 
 app.add_middleware(
@@ -34,7 +34,7 @@ app.add_middleware(
 )
 
 
-engine = create_engine('postgresql://flexeo:somosflexeros@server1.flexeo.es:5432/flexeo')
+engine = create_engine('postgresql://flexeo:somosflexeros@server1.flexeo.dgpmakes.com:5432/flexeo')
 SessionMaker: Session = sessionmaker(bind=engine)
 
 def get_db():

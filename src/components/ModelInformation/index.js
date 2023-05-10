@@ -24,7 +24,7 @@ class ModelInformation extends React.Component {
   pullData() {
     const { id } = this.props.params;
 
-    fetch('https://api.flexeo.es/v1/model/' + id, {
+    fetch('https://api.flexeo.dgpmakes.com/v1/model/' + id, {
       credentials: 'include'
     })
       .then((res) => res.json())
@@ -75,7 +75,7 @@ class ModelInformation extends React.Component {
       <>
         <Card>
           <FeatureSection>
-            <ProductImg src={"https://images.flexeo.es/file/flexeo/models/"+this.state.contentProduct.model_id}></ProductImg>
+            <ProductImg src={"https://images.flexeo.dgpmakes.com/file/flexeo/models/"+this.state.contentProduct.model_id}></ProductImg>
             <div style={{margin:"80px 0px 0px 0px"}}>
 
               <BreadCrumbs to={'/'} >Inicio / Modelo / {this.state.contentProduct.name}</BreadCrumbs>

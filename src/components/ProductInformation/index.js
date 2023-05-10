@@ -24,7 +24,7 @@ class ProductInformation extends React.Component {
   pullData() {
     const { id } = this.props.params;
 
-    fetch('https://api.flexeo.es/v1/product/'+id, {
+    fetch('https://api.flexeo.dgpmakes.com/v1/product/'+id, {
       credentials: 'include'
     })
       .then((res) => res.json())
@@ -75,7 +75,7 @@ class ProductInformation extends React.Component {
       <>
       <Card>
         <FeatureSection>
-          <ProductImg src={"https://images.flexeo.es/file/flexeo/products/"+this.state.contentProduct.product_id}></ProductImg>
+          <ProductImg src={"https://images.flexeo.dgpmakes.com/file/flexeo/products/"+this.state.contentProduct.product_id}></ProductImg>
           <div style={{margin:"40px 0px 0px 0px"}}>
             <BreadCrumbs to={'/'} >Inicio / Producto / {this.state.contentProduct.user.name} / {this.state.contentProduct.model.name}</BreadCrumbs>
             <PriceTag>{this.state.contentProduct.price}€</PriceTag>

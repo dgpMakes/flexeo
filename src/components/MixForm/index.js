@@ -42,7 +42,7 @@ const formikEnhancer = withFormik({
         if (cookieMatch) cookieMatch = cookieMatch[2];
         console.log(cookieMatch + "3")
         setTimeout(() => {
-            let res = fetch("https://api.flexeo.es/v1/product", {
+            let res = fetch("https://api.flexeo.dgpmakes.com/v1/product", {
                 method: "POST",
                 body: (JSON.stringify(payload, null, 2)),
             });
