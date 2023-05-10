@@ -34,8 +34,9 @@ app.add_middleware(
 )
 
 
-engine = create_engine('postgresql://flexeo:somosflexeros@server1.flexeo.dgpmakes.com:5432/flexeo')
+engine = create_engine('postgresql://flexeo:flexeo@db:5432/flexeo')
 SessionMaker: Session = sessionmaker(bind=engine)
+
 
 def get_db():
     db = SessionMaker()

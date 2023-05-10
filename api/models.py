@@ -28,7 +28,7 @@ class User(BaseModel):
 
 class Model(BaseModel):
     model_id: str
-    api_id: str
+    # api_id: str
     sku: str
     brand: str
     name: str
@@ -107,7 +107,7 @@ class db_Product(Base):
     description = Column(String)
     condition = Column(String)
     are_sent = Column(Boolean)
-    booked_user_id = Column(String, ForeignKey("user.user_id"))
+    # booked_user_id = Column(String, ForeignKey("user.user_id"))
     sold = Column(Boolean)
     deleted = Column(Boolean)
 
@@ -120,7 +120,7 @@ class db_Product(Base):
 class db_Model(Base):
     __tablename__ = "model"
     model_id = Column(String, primary_key=True, index=True)
-    api_id = Column(String)
+    #api_id = Column(String)
     sku = Column(String)
     brand = Column(String)
     name = Column(String)
@@ -135,20 +135,20 @@ class db_Model(Base):
     class Config:
         orm_mode = True
 
-class db_Like(Base):
-    __tablename__ = "like"
-    like_id = Column(String, primary_key=True)
-    product_id = Column(String, ForeignKey("product.product_id"))
-    user_id = Column(String, ForeignKey("user.user_id"))
-
-    class Config:
-        orm_mode = True
-
-class db_Follow(Base):
-    __tablename__ = "follow"
-    follow_id = Column(String, primary_key=True)
-    follower = Column(String, ForeignKey("user.user_id"))
-    followed = Column(String, ForeignKey("user.user_id"))
-
-    class Config:
-        orm_mode = True
+# class db_Like(Base):
+#     __tablename__ = "like"
+#     like_id = Column(String, primary_key=True)
+#     product_id = Column(String, ForeignKey("product.product_id"))
+#     user_id = Column(String, ForeignKey("user.user_id"))
+# 
+#     class Config:
+#         orm_mode = True
+# 
+# class db_Follow(Base):
+#     __tablename__ = "follow"
+#     follow_id = Column(String, primary_key=True)
+#     follower = Column(String, ForeignKey("user.user_id"))
+#     followed = Column(String, ForeignKey("user.user_id"))
+# 
+#     class Config:
+#         orm_mode = True
